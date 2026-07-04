@@ -5,9 +5,8 @@ import CTASection from '../components/sections/CTASection';
 import { db } from '../utils/db';
 import { FaChevronRight } from 'react-icons/fa';
 
-const productsData = db.getProducts();
-
 export default function Products() {
+  const productsData = db.getProducts();
   return (
     <div className="bg-white text-slate-900 overflow-hidden">
       <PageBanner 

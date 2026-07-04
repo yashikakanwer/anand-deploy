@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { db } from './utils/db';
 
 // Layout components
 import Navbar from './components/layout/Navbar';
@@ -27,9 +28,22 @@ function AppContent() {
   const location = useLocation();
   const isAdmin = location.pathname.startsWith('/admin');
 
+  // Track page visits
+  useEffect(() => {
+    if (!isAdmin) {
+      let device = 'Desktop';
+      if (/Mobi|Android|iPhone/i.test(navigator.userAgent)) {
+        device = 'Mobile';
+      } else if (/Tablet|iPad/i.test(navigator.userAgent)) {
+        device = 'Tablet';
+      }
+      db.logPageVisit(location.pathname, device);
+    }
+  }, [location.pathname, isAdmin]);
+
   if (isAdmin) {
     return (
-      <main className="min-h-screen bg-slate-50">
+      <main className="h-screen w-full overflow-hidden bg-slate-50">
         <Routes>
           <Route path="/admin" element={<Admin />} />
           <Route path="*" element={<NotFound />} />

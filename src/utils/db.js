@@ -32,6 +32,7 @@ let cache = {
   jobs: [],
   inquiries: [],
   applications: [],
+  visitors: [],
 };
 
 export const db = {
@@ -59,12 +60,14 @@ export const db = {
   // 2. Fetch admin data (inquiries, applications) after login
   loadAdminData: async () => {
     try {
-      const [inquiriesRes, applicationsRes] = await Promise.all([
+      const [inquiriesRes, applicationsRes, visitorsRes] = await Promise.all([
         api.get('/inquiries'),
         api.get('/applications'),
+        api.get('/visitors'),
       ]);
       cache.inquiries = inquiriesRes.data;
       cache.applications = applicationsRes.data;
+      cache.visitors = visitorsRes.data;
       console.log('Admin caches updated.');
     } catch (error) {
       console.error('Failed to fetch admin data from API:', error);
@@ -327,6 +330,17 @@ export const db = {
     }
   },
 
+  // --- VISITORS ---
+  getVisitors: () => cache.visitors,
+  logPageVisit: async (page, device) => {
+    try {
+      const res = await api.post('/visitors', { page, device });
+      return res.data;
+    } catch (error) {
+      console.error('Error logging page visit:', error);
+    }
+  },
+
   // --- AUTH & LOGIN ---
   getUsers: () => [], // No longer used client-side for security
   login: async (username, password) => {
@@ -354,5 +368,6 @@ export const db = {
     localStorage.removeItem('anand_admin_user');
     cache.inquiries = [];
     cache.applications = [];
+    cache.visitors = [];
   },
 };

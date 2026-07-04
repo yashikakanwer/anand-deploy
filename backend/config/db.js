@@ -2,11 +2,39 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGODB_URI);
+    console.log(`Connecting to database: ${process.env.MONGODB_URI}...`);
+    const conn = await mongoose.connect(process.env.MONGODB_URI, {
+      serverSelectionTimeoutMS: 4000
+    });
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
-    console.error(`Error: ${error.message}`);
-    process.exit(1);
+    console.warn(`Local MongoDB connection failed: ${error.message}`);
+    console.log('Attempting to start in-memory MongoDB fallback...');
+    
+    try {
+      const { MongoMemoryServer } = require('mongodb-memory-server');
+      const mongoServer = await MongoMemoryServer.create();
+      const fallbackUri = mongoServer.getUri();
+      console.log(`In-Memory MongoDB server started at: ${fallbackUri}`);
+      
+      const conn = await mongoose.connect(fallbackUri);
+      console.log(`Connected to Fallback In-Memory MongoDB: ${conn.connection.host}`);
+      
+      // Auto seed in background
+      setTimeout(async () => {
+        try {
+          const autoSeed = require('./autoSeed');
+          await autoSeed();
+        } catch (seedErr) {
+          console.error(`Auto seed error: ${seedErr.message}`);
+        }
+      }, 500);
+      
+    } catch (fallbackError) {
+      console.error(`Failed to connect to fallback DB: ${fallbackError.message}`);
+      console.error('Please make sure MongoDB is installed and running locally, or configure a valid MONGODB_URI in backend/.env.');
+      process.exit(1);
+    }
   }
 };
 

@@ -9,19 +9,17 @@ import ClientLogos from '../components/sections/ClientLogos';
 import Testimonials from '../components/sections/Testimonials';
 import CTASection from '../components/sections/CTASection';
 
-// Import Data Modules
 import { db } from '../utils/db';
-const productsData = db.getProducts();
-const projectsData = db.getProjects();
-const servicesData = db.getServices();
-
-// Import Assets
 import directorImg from '../assets/director.png';
 import substationImg from '../assets/project_substation.png';
 import panelboardImg from '../assets/project_panelboard.png';
 import heroBgImg from '../assets/hero_industrial_bg.png';
 
 export default function Home() {
+  const productsData = db.getProducts();
+  const projectsData = db.getProjects();
+  const servicesData = db.getServices();
+
   // Motion Animation Configuration
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },

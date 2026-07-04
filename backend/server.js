@@ -27,6 +27,7 @@ app.use('/api/blogs', require('./routes/blogs'));
 app.use('/api/inquiries', require('./routes/inquiries'));
 app.use('/api/applications', require('./routes/applications'));
 app.use('/api/jobs', require('./routes/jobs'));
+app.use('/api/visitors', require('./routes/visitors'));
 
 // Default Route
 app.get('/', (req, res) => {

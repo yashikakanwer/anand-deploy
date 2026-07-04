@@ -4,10 +4,9 @@ import { FaBars, FaTimes, FaChevronDown, FaEnvelope, FaPhoneAlt, FaFacebookF, Fa
 import { db } from '../../utils/db';
 import logoImg from '../../assets/logo.png';
 
-const productsData = db.getProducts();
-const servicesData = db.getServices();
-
 export default function Navbar() {
+  const productsData = db.getProducts();
+  const servicesData = db.getServices();
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(null); // 'products' or 'services' or null

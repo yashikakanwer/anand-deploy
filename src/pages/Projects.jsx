@@ -5,13 +5,11 @@ import CTASection from '../components/sections/CTASection';
 import { db } from '../utils/db';
 import { FaChevronRight } from 'react-icons/fa';
 
-const projectsData = db.getProjects();
-
-// Import Assets
 import substationImg from '../assets/project_substation.png';
 import panelboardImg from '../assets/project_panelboard.png';
 
 export default function Projects() {
+  const projectsData = db.getProjects();
   const getImage = (imgName) => {
     if (!imgName) return panelboardImg;
     if (imgName.startsWith('http') || imgName.startsWith('data:') || imgName.startsWith('/')) return imgName;

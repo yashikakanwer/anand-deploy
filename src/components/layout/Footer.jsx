@@ -4,9 +4,8 @@ import { FaLinkedin, FaTwitter, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'r
 import { db } from '../../utils/db';
 import logoImg from '../../assets/logo.png';
 
-const productsData = db.getProducts();
-
 export default function Footer() {
+  const productsData = db.getProducts();
   return (
     <footer id="footer" className="bg-[#0a0f18] border-t border-slate-900 pt-20 pb-8 text-sm">
       <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">

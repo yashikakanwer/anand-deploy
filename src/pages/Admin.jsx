@@ -21,11 +21,21 @@ export default function Admin() {
       setUser(currentUser);
       db.loadAdminData()
         .then(() => setLoading(false))
-        .catch(() => setLoading(false));
+        .catch((err) => {
+          console.warn('Session expired or invalid. Redirecting to login.', err);
+          db.logout();
+          setUser(null);
+          setLoading(false);
+        });
     } else {
       setLoading(false);
     }
   }, []);
+
+  // Reset scroll to top when tab changes to prevent layout shifts/jumps
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [activeTab]);
 
   if (loading) {
     return (
@@ -45,12 +55,12 @@ export default function Admin() {
   };
 
   return (
-    <div className="bg-slate-50 text-slate-800 min-h-screen flex flex-col md:flex-row antialiased font-body">
+    <div className="bg-slate-50 text-slate-800 h-screen w-full overflow-hidden flex flex-col md:flex-row antialiased font-body">
       {/* Sidebar */}
       <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} user={user} onLogout={handleLogout} />
 
       {/* Main Content Area */}
-      <div className="flex-grow flex flex-col min-h-screen overflow-x-hidden">
+      <div className="flex-grow min-w-0 flex flex-col h-full overflow-y-auto overflow-x-hidden">
         {/* Topbar */}
         <Topbar activeTab={activeTab} user={user} onLogout={handleLogout} />
 
@@ -99,7 +109,7 @@ function LoginScreen({ onLoginSuccess }) {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 flex flex-col justify-center items-center px-4 relative overflow-hidden font-body">
+    <div className="h-full w-full bg-slate-950 flex flex-col justify-center items-center px-4 relative overflow-hidden font-body">
       {/* Background decoration */}
       <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,#EA580C_1px,transparent_1px)] bg-[size:24px_24px]"></div>
       <div className="absolute -top-40 -left-40 w-96 h-96 bg-industrial-cyan/10 rounded-full blur-3xl"></div>
@@ -348,32 +358,38 @@ function Topbar({ activeTab, user, onLogout }) {
    ========================================================================== */
 function VisitorStatsCard() {
   const [visitorFilter, setVisitorFilter] = useState('Today'); // 'Today', '7Days', 'Month'
-  
-  // Mock visitor data
-  const visitorLogs = [
-    { id: 1, time: '10:42 AM', ip: '192.168.1.45', page: '/', device: 'Mobile', date: '2026-07-01' },
-    { id: 2, time: '10:15 AM', ip: '103.45.12.98', page: '/products/apfc-panel', device: 'Desktop', date: '2026-07-01' },
-    { id: 3, time: '09:30 AM', ip: '157.23.45.11', page: '/services', device: 'Mobile', date: '2026-07-01' },
-    { id: 4, time: 'Yesterday', ip: '182.12.90.34', page: '/', device: 'Desktop', date: '2026-06-30' },
-    { id: 5, time: 'Yesterday', ip: '45.112.33.22', page: '/about', device: 'Desktop', date: '2026-06-30' },
-    { id: 6, time: '3 Days Ago', ip: '203.44.11.89', page: '/products/ht-lt-panel', device: 'Mobile', date: '2026-06-28' },
-    { id: 7, time: '5 Days Ago', ip: '98.12.34.56', page: '/contact', device: 'Desktop', date: '2026-06-26' },
-    { id: 8, time: '10 Days Ago', ip: '102.34.89.12', page: '/', device: 'Mobile', date: '2026-06-21' },
-    { id: 9, time: '12 Days Ago', ip: '150.12.34.56', page: '/products/dg-set-panel', device: 'Desktop', date: '2026-06-19' },
-    { id: 10, time: '20 Days Ago', ip: '185.34.12.90', page: '/services', device: 'Desktop', date: '2026-06-11' }
-  ];
+  const visitors = db.getVisitors();
 
   const getFilteredLogs = () => {
+    const now = new Date();
+    const todayStr = now.toDateString();
+    
     if (visitorFilter === 'Today') {
-      return visitorLogs.filter(log => log.date === '2026-07-01');
+      return visitors.filter(log => new Date(log.date).toDateString() === todayStr);
     }
     if (visitorFilter === '7Days') {
-      return visitorLogs.filter(log => new Date(log.date) >= new Date('2026-06-25'));
+      const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+      return visitors.filter(log => new Date(log.date) >= sevenDaysAgo);
     }
-    return visitorLogs;
+    return visitors;
   };
 
   const filteredLogs = getFilteredLogs();
+
+  // Calculate real counts
+  const now = new Date();
+  const todayStr = now.toDateString();
+  const todayCount = visitors.filter(v => new Date(v.date).toDateString() === todayStr).length;
+  
+  const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
+  const sevenDaysCount = visitors.filter(v => new Date(v.date) >= sevenDaysAgo).length;
+
+  const totalCount = visitors.length;
+
+  const formatLogTime = (dateStr) => {
+    const d = new Date(dateStr);
+    return d.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) + ' ' + d.toLocaleDateString([], { month: 'short', day: 'numeric' });
+  };
 
   return (
     <div className="bg-white border border-slate-200/80 rounded-xl p-6 shadow-sm space-y-6">
@@ -396,15 +412,15 @@ function VisitorStatsCard() {
       <div className="grid grid-cols-3 gap-2 text-center font-mono">
         <div className="p-3 bg-slate-50 border border-slate-100 rounded-lg">
           <span className="text-[9px] text-slate-400 uppercase font-semibold block">Today</span>
-          <span className="text-sm font-bold text-slate-800">142</span>
+          <span className="text-sm font-bold text-slate-800">{todayCount}</span>
         </div>
         <div className="p-3 bg-slate-50 border border-slate-100 rounded-lg">
           <span className="text-[9px] text-slate-400 uppercase font-semibold block">7 Days</span>
-          <span className="text-sm font-bold text-slate-800">1,024</span>
+          <span className="text-sm font-bold text-slate-800">{sevenDaysCount}</span>
         </div>
         <div className="p-3 bg-slate-50 border border-slate-100 rounded-lg">
-          <span className="text-[9px] text-slate-400 uppercase font-semibold block">Monthly</span>
-          <span className="text-sm font-bold text-slate-800">4,512</span>
+          <span className="text-[9px] text-slate-400 uppercase font-semibold block">Total</span>
+          <span className="text-sm font-bold text-slate-800">{totalCount}</span>
         </div>
       </div>
 
@@ -412,19 +428,25 @@ function VisitorStatsCard() {
         <span className="text-xs font-semibold text-slate-500 uppercase tracking-wider block">
           Visitor Log
         </span>
-        <div className="space-y-2 max-h-[220px] overflow-y-auto pr-1">
-          {filteredLogs.map((log) => (
-            <div key={log.id} className="p-2.5 bg-slate-50 border border-slate-200/50 rounded-lg flex justify-between items-center text-[10px] font-mono text-slate-500">
-              <div className="space-y-0.5">
-                <div className="flex items-center gap-1.5">
-                  <span className="font-semibold text-slate-700">{log.ip}</span>
-                  <span className="px-1 py-0.2 bg-slate-200 text-slate-600 rounded-sm text-[8px] font-sans font-semibold">{log.device}</span>
-                </div>
-                <span className="block text-slate-400 font-sans">Visited: <strong className="text-orange-600">{log.page}</strong></span>
-              </div>
-              <span className="text-slate-400 whitespace-nowrap">{log.time}</span>
+        <div className="space-y-2 h-[220px] overflow-y-auto pr-1">
+          {filteredLogs.length === 0 ? (
+            <div className="text-center py-8 text-slate-400 text-xs font-sans">
+              No page visits recorded.
             </div>
-          ))}
+          ) : (
+            filteredLogs.map((log) => (
+              <div key={log._id || log.id} className="p-2.5 bg-slate-50 border border-slate-200/50 rounded-lg flex justify-between items-center text-[10px] font-mono text-slate-500">
+                <div className="space-y-0.5">
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-semibold text-slate-700">{log.ip}</span>
+                    <span className="px-1 py-0.2 bg-slate-200 text-slate-600 rounded-sm text-[8px] font-sans font-semibold">{log.device}</span>
+                  </div>
+                  <span className="block text-slate-400 font-sans">Visited: <strong className="text-orange-600">{log.page}</strong></span>
+                </div>
+                <span className="text-slate-400 whitespace-nowrap text-right block text-[9px]">{formatLogTime(log.date)}</span>
+              </div>
+            ))
+          )}
         </div>
       </div>
     </div>
@@ -436,14 +458,18 @@ function DashboardTab({ setActiveTab }) {
   const projects = db.getProjects();
   const services = db.getServices();
   const inquiries = db.getInquiries();
+  const visitors = db.getVisitors();
+
+  const todayStr = new Date().toDateString();
+  const visitorsToday = visitors.filter(v => new Date(v.date).toDateString() === todayStr).length;
 
   const metrics = [
     { label: 'Total Products', value: products.length, icon: <FaBoxOpen />, tab: 'products' },
     { label: 'Project', value: projects.length, icon: <FaBuilding />, tab: 'projects' },
     { label: 'Active Services', value: services.length, icon: <FaCogs />, tab: 'services' },
     { label: 'Inquiries Box', value: inquiries.length, icon: <FaInbox />, tab: 'inquiries', highlight: inquiries.filter(i => i.status === 'Pending').length },
-    { label: 'Visitors (Today)', value: 142, icon: <FaEye />, tab: 'dashboard' },
-    { label: 'Visitors (Monthly)', value: 4512, icon: <FaEye />, tab: 'dashboard' }
+    { label: 'Visitors (Today)', value: visitorsToday, icon: <FaEye />, tab: 'dashboard' },
+    { label: 'Visitors (Total)', value: visitors.length, icon: <FaEye />, tab: 'dashboard' }
   ];
 
   const recentInquiries = inquiries.slice(0, 5);
@@ -548,9 +574,6 @@ function DashboardTab({ setActiveTab }) {
             )}
           </div>
         </div>
-
-        {/* Visitor Stats Card Column */}
-        <VisitorStatsCard />
       </div>
     </div>
   );

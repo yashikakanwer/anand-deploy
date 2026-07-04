@@ -4,9 +4,8 @@ import CTASection from '../components/sections/CTASection';
 import { db } from '../utils/db';
 import { FaCheckCircle, FaTools, FaWrench, FaBolt, FaHistory } from 'react-icons/fa';
 
-const servicesData = db.getServices();
-
 export default function Services() {
+  const servicesData = db.getServices();
   const getIcon = (id) => {
     switch (id) {
       case 'turnkey-electrification': return <FaBolt className="text-industrial-cyan text-4.5xl mb-6" />;
