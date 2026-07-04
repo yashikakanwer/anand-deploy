@@ -30,21 +30,21 @@ export default function ContactForm({ presetService = "" }) {
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
     
-    // Save to local storage simulated db
-    db.addInquiry({
-      name: formData.name,
-      company: formData.company,
-      email: formData.email,
-      phone: formData.phone,
-      service: formData.service || presetService,
-      message: formData.message
-    });
-    
-    setTimeout(() => {
+    try {
+      // Save to database backend
+      await db.addInquiry({
+        name: formData.name,
+        company: formData.company,
+        email: formData.email,
+        phone: formData.phone,
+        service: formData.service || presetService,
+        message: formData.message
+      });
+      
       setSubmitting(false);
       setSuccess(true);
       setFormData({
@@ -56,7 +56,10 @@ export default function ContactForm({ presetService = "" }) {
         message: ''
       });
       setTimeout(() => setSuccess(false), 4000);
-    }, 1200);
+    } catch (err) {
+      alert("Failed to submit inquiry. Please check your internet connection.");
+      setSubmitting(false);
+    }
   };
 
   const productsList = db.getProducts();

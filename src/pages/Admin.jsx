@@ -19,8 +19,12 @@ export default function Admin() {
     const currentUser = db.getCurrentUser();
     if (currentUser) {
       setUser(currentUser);
+      db.loadAdminData()
+        .then(() => setLoading(false))
+        .catch(() => setLoading(false));
+    } else {
+      setLoading(false);
     }
-    setLoading(false);
   }, []);
 
   if (loading) {
@@ -74,20 +78,24 @@ function LoginScreen({ onLoginSuccess }) {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
     setLoading(true);
 
-    setTimeout(() => {
-      const user = db.login(username, password);
+    try {
+      const user = await db.login(username, password);
       if (user) {
+        await db.loadAdminData();
         onLoginSuccess(user);
       } else {
-        setError('Invalid username or password. (Hint: admin / password123)');
+        setError('Invalid username or password.');
         setLoading(false);
       }
-    }, 800);
+    } catch (err) {
+      setError(err.response?.data?.message || 'Login failed. Please verify credentials.');
+      setLoading(false);
+    }
   };
 
   return (
@@ -2442,7 +2450,7 @@ function ApplicationsTab() {
                 </div>
                 
                 <button
-                  onClick={() => alert(`Simulated file download for candidate: ${selectedApp.name}\nFile: ${selectedApp.cvName}`)}
+                  onClick={() => window.open(db.downloadApplicationCV(selectedApp.cvName), '_blank')}
                   className="px-3 py-1.5 bg-white border border-slate-200 hover:border-orange-500 text-[10px] text-slate-600 hover:text-orange-600 rounded font-semibold transition-all cursor-pointer flex items-center gap-1 shadow-xs"
                 >
                   Open CV

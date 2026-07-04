@@ -7,29 +7,33 @@ import { db } from '../utils/db';
 export default function Careers() {
   const jobs = db.getJobs();
 
-  const [form, setForm] = useState({ name: '', email: '', phone: '', position: jobs[0]?.title || 'General Application', cvName: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', position: jobs[0]?.title || 'General Application', cvName: '', cvFile: null });
   const [submitting, setSubmitting] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setSubmitting(true);
     
-    // Save application to DB
-    db.addApplication({
-      name: form.name,
-      email: form.email,
-      phone: form.phone || 'N/A',
-      jobTitle: form.position,
-      cvName: form.cvName || 'resume_uploaded.pdf'
-    });
-
-    setTimeout(() => {
+    try {
+      // Save application to DB
+      await db.addApplication({
+        name: form.name,
+        email: form.email,
+        phone: form.phone || 'N/A',
+        jobTitle: form.position,
+        cvName: form.cvName || 'resume_uploaded.pdf',
+        cvFile: form.cvFile
+      });
+      
       setSubmitting(false);
       setSuccess(true);
-      setForm({ name: '', email: '', phone: '', position: jobs[0]?.title || 'General Application', cvName: '' });
+      setForm({ name: '', email: '', phone: '', position: jobs[0]?.title || 'General Application', cvName: '', cvFile: null });
       setTimeout(() => setSuccess(false), 4000);
-    }, 1200);
+    } catch (err) {
+      alert("Application submission failed. Please check network connection and try again.");
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -139,7 +143,7 @@ export default function Careers() {
                     <input 
                       type="file" 
                       required={!form.cvName}
-                      onChange={(e) => setForm({ ...form, cvName: e.target.files[0]?.name || '' })}
+                      onChange={(e) => setForm({ ...form, cvName: e.target.files[0]?.name || '', cvFile: e.target.files[0] })}
                       className="absolute inset-0 opacity-0 cursor-pointer" 
                     />
                   </div>
