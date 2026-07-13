@@ -5,10 +5,10 @@ import { FaFilePdf, FaDownload, FaLock, FaTimes } from 'react-icons/fa';
 
 export default function Downloads() {
   const documents = [
-    { id: "corp-profile", name: "Corporate Profile PDF", file: "corporate-profile.pdf", size: "4.8 MB", desc: "Company capacities, plant layouts, and contracting certifications." },
-    { id: "plc-layout", name: "PLC Technical Specification Sheets", file: "plc-panels-catalog.pdf", size: "3.2 MB", desc: "Detailed wiring schemas and cabinet ingress protection values." },
-    { id: "apfc-model", name: "APFC Savings Model Calculators", file: "apfc-catalog.pdf", size: "1.5 MB", desc: "Reactive load calculations and capacitor step sizing formulas." },
-    { id: "earth-guide", name: "Surge Earthing Design Guidelines", file: "earthing-specs.pdf", size: "2.1 MB", desc: "Ground loop calculation guidelines under IEEE standards." }
+    { id: "corp-profile", name: "Corporate Profile PDF", file: "corporate-profile.pdf", size: "4.8 MB", desc: "Company profile, licensing details, and machinery layouts." },
+    { id: "plc-layout", name: "PLC Technical Specification Sheets", file: "plc-panels-catalog.pdf", size: "3.2 MB", desc: "Technical drawings and switchgear specs for PLC control panels." },
+    { id: "apfc-model", name: "APFC Savings Model Calculators", file: "apfc-catalog.pdf", size: "1.5 MB", desc: "Reactive load parameter tables and capacitor bank calculations." },
+    { id: "earth-guide", name: "Surge Earthing Design Guidelines", file: "earthing-specs.pdf", size: "2.1 MB", desc: "Chemical earthing installation guidelines and site safety codes." }
   ];
 
   const [activeDoc, setActiveDoc] = useState(null); // Document object or null
@@ -51,8 +51,8 @@ export default function Downloads() {
   return (
     <div className="bg-white text-slate-900 overflow-hidden">
       <PageBanner 
-        title="Download Center" 
-        subtitle="Access technical layouts, brochures, and electrical calculation guidelines."
+        title="Resource Downloads" 
+        subtitle="Access product catalogs, technical manuals, and specification sheets."
       />
 
       <section className="py-20 md:py-24 bg-white">
@@ -83,7 +83,7 @@ export default function Downloads() {
 
                 <div className="border-t border-slate-200 pt-6 mt-6 flex justify-between items-center">
                   <span className="text-[10px] text-slate-500 flex items-center gap-1.5 uppercase font-heading font-semibold">
-                    <FaLock /> Gated Catalog
+                    <FaLock /> Gated Download
                   </span>
                   <button 
                     onClick={() => handleOpenGate(doc)}
@@ -111,9 +111,9 @@ export default function Downloads() {
               <FaTimes size={20} />
             </button>
 
-            <h3 className="font-heading font-bold text-xl text-slate-900 mb-2">Gated Download Portal</h3>
+            <h3 className="font-heading font-bold text-xl text-slate-900 mb-2">Unlock Document</h3>
             <p className="text-xs text-slate-500 mb-6 leading-relaxed">
-              Enter your credentials to download standard specifications document: <br /><strong>{activeDoc.name}</strong>
+              Enter your contact information to access the file: <br /><strong>{activeDoc.name}</strong>
             </p>
 
             <form onSubmit={handleDownload} className="space-y-4 text-xs">
@@ -130,25 +130,25 @@ export default function Downloads() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="font-semibold text-slate-500 uppercase tracking-wider">Company Name</label>
+                <label className="font-semibold text-slate-500 uppercase tracking-wider">Company / Firm Name</label>
                 <input 
                   type="text" 
                   required 
                   value={form.company}
                   onChange={(e) => setForm({ ...form, company: e.target.value })}
-                  placeholder="e.g. Siemens Projects" 
+                  placeholder="e.g. Siemens Projects Ltd" 
                   className="bg-slate-50 border border-slate-200 focus:bg-white focus:border-industrial-cyan outline-none rounded p-3 text-slate-900 transition-colors"
                 />
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="font-semibold text-slate-500 uppercase tracking-wider">Corporate Email</label>
+                <label className="font-semibold text-slate-500 uppercase tracking-wider">Email Address</label>
                 <input 
                   type="email" 
                   required 
                   value={form.email}
                   onChange={(e) => setForm({ ...form, email: e.target.value })}
-                  placeholder="e.g. rajesh@siemens.com" 
+                  placeholder="e.g. rajesh@company.com" 
                   className="bg-slate-50 border border-slate-200 focus:bg-white focus:border-industrial-cyan outline-none rounded p-3 text-slate-900 transition-colors"
                 />
               </div>
@@ -158,12 +158,12 @@ export default function Downloads() {
                 disabled={submitting}
                 className="w-full py-3.5 bg-industrial-cyan text-white hover:bg-slate-900 font-bold rounded uppercase tracking-wider font-heading mt-2 disabled:opacity-50 shadow-md shadow-industrial-cyan/10"
               >
-                {submitting ? 'Authenticating & Fetching File...' : 'Submit & Download PDF'}
+                {submitting ? 'Checking details...' : 'Submit & Download PDF'}
               </button>
 
               {success && (
                 <div className="p-3 bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 rounded text-center font-semibold">
-                  Credentials Verified. Initiating Download ✓
+                  Verification successful. Initiating download...
                 </div>
               )}
             </form>

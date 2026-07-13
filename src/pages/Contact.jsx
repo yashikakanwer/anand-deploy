@@ -7,8 +7,8 @@ export default function Contact() {
   return (
     <div className="bg-white text-slate-900 overflow-hidden">
       <PageBanner 
-        title="Contact Anand Electricals" 
-        subtitle="Consult with our contracting engineers on your industrial installation bids."
+        title="Contact Us" 
+        subtitle="Consult with our engineering team for industrial switchgear bids and custom panel fabrication requests."
       />
 
       <section className="py-20 md:py-24 bg-white">
@@ -17,14 +17,14 @@ export default function Contact() {
           {/* Contact Details Column */}
           <div className="lg:col-span-5 space-y-8">
             <h2 className="font-heading font-bold text-2.5xl text-slate-900 mb-6">
-              Head Office Coordinates
+              Our Head Office
             </h2>
             
             <div className="space-y-6 text-sm">
               <div className="p-6 bg-slate-50 border border-slate-200/60 rounded-xl flex items-start gap-4 shadow-md">
                 <FaMapMarkerAlt className="text-industrial-cyan text-xl flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-heading font-semibold text-slate-900 mb-1">Corporate Address</h4>
+                  <h4 className="font-heading font-semibold text-slate-900 mb-1">Office Address</h4>
                   <p className="text-slate-600 leading-relaxed">
                     S.No. 5, Near Ranisati Dharmkanta, Sarna Industrial Area, Jaipur, Rajasthan - 302012
                   </p>
@@ -46,7 +46,7 @@ export default function Contact() {
               <div className="p-6 bg-slate-50 border border-slate-200/60 rounded-xl flex items-start gap-4 shadow-md">
                 <FaPhoneAlt className="text-industrial-cyan text-xl flex-shrink-0 mt-1" />
                 <div>
-                  <h4 className="font-heading font-semibold text-slate-900 mb-1">Phone Contact</h4>
+                  <h4 className="font-heading font-semibold text-slate-900 mb-1">Phone Support</h4>
                   <p className="text-slate-600">
                     <a href="tel:+919694700750" className="hover:text-industrial-cyan transition-colors">
                       +91 96947 00750
@@ -62,7 +62,7 @@ export default function Contact() {
               <span className="w-3.5 h-3.5 bg-red-500 rounded-full shadow-[0_0_12px_#ef4444] animate-pulse z-10"></span>
               <span className="w-12 h-12 border border-red-500/20 rounded-full absolute animate-[ping_2.5s_infinite] pointer-events-none"></span>
               <div className="text-xs text-slate-500 mt-3 font-mono tracking-widest z-10 uppercase">
-                Jaipur HQ Node Lock
+                Jaipur Office Location
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ export default function Contact() {
           {/* Form Column */}
           <div className="lg:col-span-7">
             <h2 className="font-heading font-bold text-2.5xl text-slate-900 mb-6">
-              Transmission Inquiries
+              Request an Inquiry
             </h2>
             <ContactForm />
           </div>

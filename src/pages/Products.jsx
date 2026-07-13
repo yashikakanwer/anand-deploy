@@ -10,8 +10,8 @@ export default function Products() {
   return (
     <div className="bg-white text-slate-900 overflow-hidden">
       <PageBanner 
-        title="Industrial Switchgear & Control Panels" 
-        subtitle="Explore our certified high-performance electrical hardware systems."
+        title="Switchgear & Custom Control Panels" 
+        subtitle="Browse our comprehensive range of certified power distribution and automation panels."
       />
 
       <section className="py-20 md:py-24 bg-white">
@@ -58,7 +58,7 @@ export default function Products() {
                     to={`/products/${prod.slug}`} 
                     className="text-industrial-cyan text-sm font-semibold hover:text-slate-900 font-heading inline-flex items-center gap-1.5"
                   >
-                    View Details <FaChevronRight size={10} />
+                    Learn More <FaChevronRight size={10} />
                   </Link>
                   <Link 
                     to="/quote" 

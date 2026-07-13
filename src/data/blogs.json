@@ -2,9 +2,9 @@
   {
     "id": "understanding-power-factor",
     "slug": "understanding-power-factor",
-    "title": "Optimizing Power Factor: A Practical Guide for Factories",
-    "summary": "Learn how poor power factor impacts electric bills, triggers utility penalties, and how APFC systems restore efficiency.",
-    "content": "In heavy industries, inductive loads like motors, induction furnaces, and welding equipment consume both active (KW) and reactive (KVAR) power. The ratio of active power to total apparent power is the Power Factor (PF). A low PF indicates inefficient energy consumption, which increases grid line current. Electric utilities penalize factories with PF below 0.90 to cover line load losses. Automatic Power Factor Correction (APFC) panels solve this by dynamically switching capacitor banks in real-time to match inductive shifts, stabilizing current loops and keeping PF at 0.99. This guide details the financial ROI of capacitive detuned reactor installations in Jaipur's industrial hubs.",
+    "title": "Understanding Power Factor: Saving Energy and Costs",
+    "summary": "Learn how low power factor increases electricity bills, triggers utility penalties, and how APFC panels solve this problem.",
+    "content": "In heavy industries, running large motors and welding machines can drop the system's power factor. A low power factor causes inefficient energy consumption and prompts electricity utilities to charge penalties, leading to higher bills. Installing Automatic Power Factor Correction (APFC) panels solves this by automatically switching capacitor banks on and off, keeping the power factor near 0.99 and reducing monthly energy charges.",
     "author": "Amit Kumar",
     "date": "May 15, 2026",
     "readTime": "6 min read"
@@ -12,9 +12,9 @@
   {
     "id": "industrial-automation-scada",
     "slug": "industrial-automation-scada",
-    "title": "Integrating PLC Control Panels with Modern SCADA Frameworks",
-    "summary": "Explore best practices in linking factory PLC controllers to supervisory control dashboards for live plant telemetry.",
-    "content": "Factory automation relies on PLC control panels communicating with plant-wide SCADA (Supervisory Control and Data Acquisition) software. Linking these units requires low-latency ethernet fieldbus protocols like Profinet or Modbus TCP. By routing status indicators, motor speeds, and temperature limits from PLC modules to centralized control screens, operators gain real-time visibility. This post reviews hardware isolation, redundant communication networks, and cybersecurity steps for safeguarding industrial control networks against localized line interference.",
+    "title": "Integrating PLC Panels with SCADA Automation",
+    "summary": "Discover how connecting PLC controllers to supervisory screens enables real-time automation in factories.",
+    "content": "Modern plant automation relies on PLC control panels communicating with central SCADA software. PLC panels track machine status, speeds, and temperatures in real-time, sending this data to centralized monitor screens. This setup allows operators to control and supervise the entire factory workflow from one station. Proper wiring and communication protocol setups prevent interference and ensure smooth data transfer.",
     "author": "Amit Kumar",
     "date": "June 10, 2026",
     "readTime": "8 min read"
@@ -22,9 +22,9 @@
   {
     "id": "safety-standards-earthing",
     "slug": "safety-standards-earthing",
-    "title": "Why Modern Sub-stations Require Chemical Earthing Systems",
-    "summary": "Traditional salt and charcoal grids are obsolete. Discover why copper-bonded chemical earthing is the new standard.",
-    "content": "Grounding systems in high-voltage substations must discharge short-circuits and lightning surges instantly to prevent equipment failure and protect personnel. Traditional pipe earthing using charcoal and salt degrades within a few years as rain flushes the conducting ions away, spiking ground loop impedance. Modern chemical earthing utilizes copper-bonded steel electrodes encased in a moisture-retaining carbon bentonite compound. This eco-friendly backfill expands when damp and does not leach, keeping earth resistance below 1.0 Ohm for over 15 years. We outline design considerations under IEEE 80 compliance guidelines and Rajasthan electricity regulations.",
+    "title": "Why Factories Need Advanced Chemical Earthing",
+    "summary": "Traditional salt and charcoal grounding grids are outdated. Learn why chemical earthing is the new standard for safety.",
+    "content": "Grounding systems in substations and factories are critical to discharge short-circuit faults and lightning surges safely. Traditional grounding using charcoal and salt degrades within a few years as rain washes away the conductive ions. Modern chemical earthing solves this by using copper-bonded steel electrodes surrounded by moisture-retaining chemical compound powders. It maintains resistance below 1.0 Ohm and delivers reliable protection for over 15 years with minimal maintenance.",
     "author": "Amit Kumar",
     "date": "June 20, 2026",
     "readTime": "5 min read"

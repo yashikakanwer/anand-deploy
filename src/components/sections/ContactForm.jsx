@@ -73,7 +73,7 @@ export default function ContactForm({ presetService = "" }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="flex flex-col gap-2">
             <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-              Aapka Naam (Full Name)
+              Full Name
             </label>
             <input 
               type="text" 
@@ -87,7 +87,7 @@ export default function ContactForm({ presetService = "" }) {
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="company" className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-              Company/Dukaan ka Naam (Company Name)
+              Company Name
             </label>
             <input 
               type="text" 
@@ -95,7 +95,7 @@ export default function ContactForm({ presetService = "" }) {
               required 
               value={formData.company}
               onChange={handleChange}
-              placeholder="e.g. Tata Projects Ltd ya Shop Name" 
+              placeholder="e.g. Siemens Projects Ltd" 
               className="bg-slate-50 border border-slate-200 focus:bg-white focus:border-industrial-cyan focus:ring-1 focus:ring-industrial-cyan/20 outline-none rounded-md px-4 py-3 text-sm text-slate-900 transition-all"
             />
           </div>
@@ -118,7 +118,7 @@ export default function ContactForm({ presetService = "" }) {
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="phone" className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-              Mobile Number (Phone)
+              Phone Number
             </label>
             <input 
               type="tel" 
@@ -134,7 +134,7 @@ export default function ContactForm({ presetService = "" }) {
 
         <div className="flex flex-col gap-2">
           <label htmlFor="service" className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-            Kaunsa Board ya Samaan Chahiye? (Required System)
+            Required System / Panel Type
           </label>
           <select 
             id="service" 
@@ -143,9 +143,9 @@ export default function ContactForm({ presetService = "" }) {
             onChange={handleChange}
             className="bg-slate-50 border border-slate-200 focus:bg-white focus:border-industrial-cyan focus:ring-1 focus:ring-industrial-cyan/20 outline-none rounded-md px-4 py-3 text-sm text-slate-900 transition-all cursor-pointer"
           >
-            <option value="" className="bg-white text-slate-900" disabled>Samaan ya Service select karein</option>
+            <option value="" className="bg-white text-slate-900" disabled>Select System or Service</option>
             
-            <optgroup label="Products (Samaan)" className="bg-white font-semibold text-slate-500">
+            <optgroup label="Products" className="bg-white font-semibold text-slate-500">
               {productsList.map(p => (
                 <option key={p.id} value={p.id} className="bg-white text-slate-900">
                   {p.name}
@@ -153,7 +153,7 @@ export default function ContactForm({ presetService = "" }) {
               ))}
             </optgroup>
 
-            <optgroup label="Services (Kaam)" className="bg-white font-semibold text-slate-500">
+            <optgroup label="Services" className="bg-white font-semibold text-slate-500">
               {servicesList.map(s => (
                 <option key={s.id} value={s.id} className="bg-white text-slate-900">
                   {s.title}
@@ -165,7 +165,7 @@ export default function ContactForm({ presetService = "" }) {
 
         <div className="flex flex-col gap-2">
           <label htmlFor="message" className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-            Apni Zarurat/Kaam Likhein (Describe requirement)
+            Describe Requirements
           </label>
           <textarea 
             id="message" 
@@ -173,7 +173,7 @@ export default function ContactForm({ presetService = "" }) {
             required
             value={formData.message}
             onChange={handleChange}
-            placeholder="Aapko kaisa board chahiye, kitni power chahiye, details likhein..." 
+            placeholder="Please specify capacity, enclosure type, and any single line diagram details..." 
             className="bg-slate-50 border border-slate-200 focus:bg-white focus:border-industrial-cyan focus:ring-1 focus:ring-industrial-cyan/20 outline-none rounded-md px-4 py-3 text-sm text-slate-900 transition-all resize-none"
           ></textarea>
         </div>
@@ -183,12 +183,12 @@ export default function ContactForm({ presetService = "" }) {
           disabled={submitting}
           className="w-full py-4 bg-industrial-cyan text-white hover:bg-slate-900 font-bold rounded-md text-sm transition-all duration-300 tracking-wider uppercase font-heading disabled:opacity-50 shadow-md shadow-industrial-cyan/10"
         >
-          {submitting ? 'Bhej rahe hain...' : 'Humse Bhao/Price Poochhein'}
+          {submitting ? 'Submitting...' : 'Request Quote'}
         </button>
 
         {success && (
           <div className="p-4 bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 rounded-md text-center text-xs font-semibold">
-            Message bhej diya gaya hai! Hum aapse jaldi baat karenge. (Submit Successful!)
+            Inquiry submitted successfully! Our engineering team will contact you shortly.
           </div>
         )}
       </form>

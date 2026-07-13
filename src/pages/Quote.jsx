@@ -7,8 +7,8 @@ export default function Quote() {
   return (
     <div className="bg-white text-slate-900 overflow-hidden">
       <PageBanner 
-        title="Request Technical Quote" 
-        subtitle="Route your load configurations directly to our senior estimating engineers."
+        title="Get a Quote" 
+        subtitle="Submit your load specifications and single line diagrams (SLD) to receive a precise project estimation."
       />
 
       <section className="py-20 md:py-24 bg-white">
@@ -17,28 +17,28 @@ export default function Quote() {
           {/* Information Column */}
           <div className="lg:col-span-5 space-y-8">
             <h2 className="font-heading font-bold text-2.5xl text-slate-900">
-              Bidding Consultations
+              Project Estimation Process
             </h2>
             <p className="text-slate-600 text-sm leading-relaxed">
-              For large infrastructure developments or RIICO factory installations, we provide full technical support during tender bidding. Submit single-line diagrams (SLD) or load specs, and our estimators will prepare a Bill of Materials (BOM) matching project timelines.
+              For large manufacturing facilities and commercial developments, we provide complete engineering consultations. Send us your drawings and load schedules to receive itemized pricing.
             </p>
 
             <div className="space-y-4 text-xs">
               <div className="flex items-center gap-3 text-slate-500">
                 <FaRegClock className="text-industrial-cyan text-base flex-shrink-0" />
-                <span>Typical turn-around: 24 to 48 working hours.</span>
+                <span>Turnaround: Estimation within 24 to 48 hours.</span>
               </div>
               <div className="flex items-center gap-3 text-slate-500">
                 <FaEnvelope className="text-industrial-cyan text-base flex-shrink-0" />
-                <span>Submit files directly to: anandelectricals1984@gmail.com</span>
+                <span>Direct email for drawings: anandelectricals1984@gmail.com</span>
               </div>
             </div>
             
             {/* Custom specification box */}
             <div className="p-6 bg-slate-50 border border-slate-200/60 rounded-xl border-l-2 border-l-industrial-cyan shadow-sm">
-              <h4 className="font-heading font-semibold text-slate-900 text-xs mb-1">CPRI Tested Cabinets</h4>
+              <h4 className="font-heading font-semibold text-slate-900 text-xs mb-1">Certified & Standard Enclosures</h4>
               <p className="text-[10px] text-slate-600 leading-relaxed">
-                All estimations default to 50kA short-circuit ratings with IP54/IP55 metal enclosures unless otherwise requested.
+                All our panel enclosures are manufactured with IP54/IP55 rated CRCA steel, protecting internal breakers from dust and water.
               </p>
             </div>
           </div>

@@ -9,7 +9,7 @@ export default function About() {
     <div className="bg-white text-slate-900 overflow-hidden">
       <PageBanner 
         title="About Anand Electricals & Engineers" 
-        subtitle="A B2B contracting firm delivering reliable energy infrastructure since 2008."
+        subtitle="Delivering reliable, safe, and efficient electrical power infrastructure since 2008."
       />
 
       {/* Corporate Profile Section */}
@@ -20,13 +20,13 @@ export default function About() {
               Corporate Profile
             </span>
             <h2 className="font-heading font-bold text-3xl md:text-4.5xl text-slate-900 tracking-tight">
-              Eighteen Years of Engineering Excellence
+              18 Years of Engineering Excellence
             </h2>
             <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-              Founded in Jaipur, Rajasthan, Anand Electricals & Engineers Pvt Ltd has grown from a specialized panel assembly shop into one of India's leading industrial electrical contracting companies. We cater exclusively to factories, government infrastructure, hospitals, hotels, and builders.
+              Founded in Jaipur, Rajasthan, Anand Electricals & Engineers has grown into a trusted industrial electrical contracting firm. We design and build custom control panels and substations for factories, hospitals, hotels, and builders.
             </p>
             <p className="text-slate-600 leading-relaxed text-sm">
-              We design and construct high-tension (HT) outdoor substations, low-tension (LT) main distribution panels, motor control centers (MCC), and automated PLC synchronization systems. Every panel is engineered using advanced sheet metal CAD algorithms, CNC punching machinery, and CPRI-certified insulation profiles.
+              We design and construct high-tension (HT) substations, low-tension (LT) main distribution panels, and motor control centers (MCC). Every panel is engineered using advanced CAD layouts and automated machinery to guarantee safety and compliance.
             </p>
           </div>
 
@@ -40,15 +40,15 @@ export default function About() {
               </li>
               <li className="flex items-start gap-3">
                 <FaCheckCircle className="text-industrial-cyan mt-1 flex-shrink-0" />
-                <span>Grade-A State Electrical Inspectorate authorized grid installations.</span>
+                <span>Licensed Grade-A state electrical contractor.</span>
               </li>
               <li className="flex items-start gap-3">
                 <FaCheckCircle className="text-industrial-cyan mt-1 flex-shrink-0" />
-                <span>Nationwide installation and diagnostic commissioning engineers.</span>
+                <span>Dedicated team of on-site installation and maintenance engineers.</span>
               </li>
               <li className="flex items-start gap-3">
                 <FaCheckCircle className="text-industrial-cyan mt-1 flex-shrink-0" />
-                <span>End-to-end design modeling including short circuit heat rise calculations.</span>
+                <span>Computerized 3D design and safety calculation models.</span>
               </li>
             </ul>
           </div>
@@ -65,7 +65,7 @@ export default function About() {
             </div>
             <h3 className="font-heading font-bold text-2xl text-slate-900 mb-4">Our Vision</h3>
             <p className="text-slate-600 leading-relaxed text-sm">
-              To be recognized as India's premier B2B industrial electrical engineering partner, delivering highly safe, thermal-stable, and energy-efficient control hardware and substations. We strive to support the country's manufacturing expansion by establishing the baseline of industrial power grid safety.
+              To be recognized as India's premier B2B industrial electrical engineering partner. We aim to support manufacturing expansions by delivering highly safe, thermally stable, and energy-efficient control systems.
             </p>
           </div>
 
@@ -75,7 +75,7 @@ export default function About() {
             </div>
             <h3 className="font-heading font-bold text-2xl text-slate-900 mb-4">Our Mission</h3>
             <p className="text-slate-600 leading-relaxed text-sm">
-              Our mission is to translate complex power configurations into reliable, physical switchgear cabinets. We achieve this by committing to triple-testing quality procedures, retaining experienced design engineers, and optimizing power factor profiles to prevent utility line losses and penalties.
+              To translate complex electrical configurations into safe, reliable physical cabinets. We commit to strict quality testing and premium components to prevent electrical faults and energy losses.
             </p>
           </div>
 
@@ -90,15 +90,15 @@ export default function About() {
               Core Principles
             </span>
             <h2 className="font-heading font-bold text-3xl md:text-4.5xl text-slate-900 tracking-tight">
-              Our Value System
+              Our Values
             </h2>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-8 bg-slate-50 border border-slate-200/60 rounded-xl text-center shadow-sm">
-              <h3 className="font-heading font-bold text-xl text-slate-900 mb-3">Safety Compliance</h3>
+              <h3 className="font-heading font-bold text-xl text-slate-900 mb-3">Safety First</h3>
               <p className="text-slate-600 text-xs leading-relaxed">
-                Zero tolerance for electrical leakage or enclosure thermal issues. All calculations match IEEE short-circuit requirements.
+                Zero tolerance for electrical leakage. All designs comply with standard safety regulations to prevent worksite hazards.
               </p>
             </div>
             <div className="p-8 bg-slate-50 border border-slate-200/60 rounded-xl text-center shadow-sm">
@@ -108,9 +108,9 @@ export default function About() {
               </p>
             </div>
             <div className="p-8 bg-slate-50 border border-slate-200/60 rounded-xl text-center shadow-sm">
-              <h3 className="font-heading font-bold text-xl text-slate-900 mb-3">Timely Commissioning</h3>
+              <h3 className="font-heading font-bold text-xl text-slate-900 mb-3">On-time Commissioning</h3>
               <p className="text-slate-600 text-xs leading-relaxed">
-                We understand that plant shutdowns are highly expensive. Pre-fabrication of modular segments ensures fast commissioning.
+                We understand that project delays are highly expensive. Pre-fabricated modular systems ensure fast onsite installation.
               </p>
             </div>
           </div>

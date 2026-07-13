@@ -16,7 +16,7 @@ export default function Footer() {
             <img src={logoImg} alt="Anand Electricals" className="h-8 w-auto object-contain" />
           </Link>
           <p className="text-slate-400 leading-relaxed max-w-sm">
-            Engineering world-class electrical distribution grids, intelligent control panels, and safety grounding infrastructure for enterprise-scale factories and developers across India.
+            Manufacturing safe, certified control panels and industrial earthing systems for factories and commercial buildings since 2008.
           </p>
           <div className="flex gap-4">
             <a 

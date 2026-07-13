@@ -6,33 +6,33 @@ import { FaIndustry, FaHospital, FaHotel, FaBuilding, FaWarehouse, FaCheckCircle
 export default function Industries() {
   const industries = [
     {
-      name: "Manufacturing Plants",
+      name: "Manufacturing & Industrial Plants",
       icon: <FaIndustry className="text-industrial-cyan text-4xl mb-6" />,
-      desc: "Providing heavy power motor control centers, sub-stations, and dynamic PLC line synchronizations for heavy process lines.",
+      desc: "High-capacity switchgear panels, motor control centers (MCC), and automated PLC synchronization systems for heavy machinery.",
       solution: "Recommended: MCC Panels, PCC Panels, Bus Ducts"
     },
     {
       name: "Healthcare & Hospitals",
       icon: <FaHospital className="text-industrial-cyan text-4xl mb-6" />,
-      desc: "Fail-safe AMF automatic backup changeovers and clean-line medical isolation grounding systems for operating suites.",
-      solution: "Recommended: AMF Panels, Chemical Earthing Systems"
+      desc: "Uninterrupted power systems using automatic mains failure changeover panels (AMF) and isolated medical grounding systems.",
+      solution: "Recommended: AMF Panels, Chemical Earthing"
     },
     {
-      name: "Luxury Hotels",
+      name: "Hospitality & Hotels",
       icon: <FaHotel className="text-industrial-cyan text-4xl mb-6" />,
-      desc: "Optimized APFC capacitor network banks and main breakers to maintain line voltages and prevent high reactive power billing tariffs.",
+      desc: "Power factor correction panels to prevent line losses and utility penalties, ensuring optimized energy billing.",
       solution: "Recommended: APFC Panels, PCC Panels"
     },
     {
-      name: "Commercial Hubs",
+      name: "Commercial Malls & Hubs",
       icon: <FaBuilding className="text-industrial-cyan text-4xl mb-6" />,
-      desc: "High-capacity compact sandwich bus ducts for building trunk runs, replacing heavy and bulky cable routing trays.",
+      desc: "High-density power routing using space-saving busbar trunking systems and centralized sub-metering grids.",
       solution: "Recommended: Bus Ducts, AMF Panels"
     },
     {
-      name: "Logistics Warehouses",
+      name: "Warehouses & Logistics",
       icon: <FaWarehouse className="text-industrial-cyan text-4xl mb-6" />,
-      desc: "Organized low-voltage distribution boards, external safety earthing systems, and automated conveyor control switches.",
+      desc: "Dust-proof and weatherproof distribution enclosures, automated conveyor control panels, and surge protection grounding.",
       solution: "Recommended: Earthing Systems, MCC Panels"
     }
   ];
@@ -41,7 +41,7 @@ export default function Industries() {
     <div className="bg-white text-slate-900 overflow-hidden">
       <PageBanner 
         title="Industries We Serve" 
-        subtitle="Specialized electrical hardware customized to comply with sector safety rules."
+        subtitle="Engineered switchgear and customized electrical panels tailored for diverse sectors."
       />
 
       <section className="py-20 md:py-24 bg-white">

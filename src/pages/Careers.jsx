@@ -159,7 +159,7 @@ export default function Careers() {
 
                 {success && (
                   <div className="p-3 bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 font-semibold rounded text-center text-[10px]">
-                    Application transmitted successfully.
+                    Application submitted successfully.
                   </div>
                 )}
               </form>

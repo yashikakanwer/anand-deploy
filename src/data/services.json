@@ -2,49 +2,49 @@
   {
     "id": "turnkey-electrification",
     "slug": "turnkey-electrification",
-    "title": "Poori Factory me Bijli ki Fitting (Turnkey Electrification)",
-    "description": "Nayi factory ya building me wires dalne se lekar main boards lagane tak ka saara kaam hum khud karte hain. Aapko sirf switch dabana hoga, baki sab hum taiyaar karke denge.",
+    "title": "Turnkey Plant & Factory Electrification",
+    "description": "End-to-end electrical wiring, switchgear setup, and panel installation for new industrial manufacturing plants.",
     "features": [
-      "Badi power lines ki piping aur cabling ka kaam",
-      "Sarkari approval aur safety inspection pas karwana",
-      "Transformer aur baday generators lagana aur chalana",
-      "Factory chalu karne se pehle poori checking aur testing karna"
+      "High-voltage wiring and distribution networks",
+      "Assistance in government inspections and safety clearances",
+      "Transformer and heavy generator grid synchronization",
+      "Pre-commissioning quality testing and checks"
     ]
   },
   {
     "id": "custom-panel-design",
     "slug": "custom-panel-design",
-    "title": "Apni Pasand ka Bijli Board Banwayein (Custom Panel)",
-    "description": "Aap hume batayein aapko kaisa board chahiye ya aapki factory me kaunsi machine chalani hai. Hum lohe ko kaat kar, paint karke aur sahi buttons lagakar waisa hi board bana denge.",
+    "title": "Custom Control Panel Design",
+    "description": "Bespoke fabrication of Motor Control Centers (MCC), PLC cabinets, and distribution switchboards according to custom load specifications.",
     "features": [
-      "Pehle computer par 3D design banana",
-      "Automatic CNC machines se lohe ki cutting aur chhed (punching) karna",
-      "Bade copper busbars aur safety buttons lagana",
-      "Factory me test karke aapko sahi board dena"
+      "Pre-production computerized CAD 3D designing",
+      "CNC sheet metal cutting and precise cabinet punching",
+      "Installation of high-grade copper busbars and safety breakers",
+      "Pre-delivery factory inspection and heat-run testing"
     ]
   },
   {
     "id": "safety-audits",
     "slug": "safety-audits",
-    "title": "Chemical Earthing (Shock aur Bijli se Bachne ka Upay)",
-    "description": "Factory ya ghar me kisi ko bijli ka jhatka na lage, iske liye hum zameen ke andar chemical earthing lagate hain. Yeh normal earthing se 10 guna zyada chalti hai aur poori tarah surakshit hai.",
+    "title": "Advanced Chemical Earthing",
+    "description": "Installation of copper-bonded chemical electrodes designed to dissipate lightning surges and short-circuit faults instantly.",
     "features": [
-      "Special chemical compound ka istemal jo nammi banaye rakhe",
-      "Earthing ke baad check karna ki shock ka khatra bilkul khatam ho gaya",
-      "15 saal tak chalne wali earthing bina kharab huye",
-      "Kam jagah me lag jata hai, namak aur koyle ki zarurat nahi hoti"
+      "High-conductivity eco-friendly chemical backfill compounds",
+      "Post-installation ground impedance measurements",
+      "Corrosion-resistant steel core with a lifespan of 15+ years",
+      "Compact footprint compared to traditional charcoal grids"
     ]
   },
   {
     "id": "preventive-maintenance",
     "slug": "preventive-maintenance",
-    "title": "Bijli ke Boards ki Service aur Checking (AMC)",
-    "description": "Aapke bijli ke boards kharab na ho aur factory band na ho, iske liye hum har mahine aakar boards ki safai karenge aur check karenge ki koi switch dheela toh nahi hai.",
+    "title": "Preventive Maintenance & Safety Audits",
+    "description": "Scheduled system checks, diagnostic tests, thermal imaging, and AMC services to prevent plant shutdowns and utility penalties.",
     "features": [
-      "Har mahine relay switches ki checking aur wires ko tight karna",
-      "Bade circuit breakers ki checking aur lubrication (tel dalna)",
-      "Koi switch jal jaye toh turant doosra switch lagana",
-      "Emergency ke liye hamare engineers har samay taiyaar"
+      "Monthly checkups of switch contacts and loose wire checks",
+      "Lubrication and calibration of main circuit breakers",
+      "Immediate troubleshooting and swap support for faulty parts",
+      "Emergency support team available for technical consultations"
     ]
   }
 ]

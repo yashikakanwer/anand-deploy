@@ -19,8 +19,8 @@ export default function Services() {
   return (
     <div className="bg-white text-slate-900 overflow-hidden">
       <PageBanner 
-        title="Industrial Contracting Services" 
-        subtitle="End-to-end design modeling, regulatory approvals, and preventive maintenance."
+        title="Our Services" 
+        subtitle="From switchgear installation and testing to preventive maintenance audits."
       />
 
       <section className="py-20 md:py-24 bg-white">

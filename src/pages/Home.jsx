@@ -49,20 +49,20 @@ export default function Home() {
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-semibold text-industrial-cyan uppercase tracking-widest mb-6">
               <span className="w-1.5 h-1.5 bg-industrial-cyan rounded-full animate-ping"></span>
-              Sabse Safe aur Sahi Kaam
+              Safe & Reliable Electrical Solutions
             </span>
             <h1 className="font-heading font-extrabold text-4xl md:text-5.5xl leading-tight tracking-tight text-white mb-6">
-              Ghar aur Factory ke liye Bijli ke Board (Panels) aur Cables.
+              High-Quality Switchgear & Custom Control Panels.
             </h1>
             <p className="font-body text-base md:text-lg text-slate-300 max-w-xl mb-8 leading-relaxed">
-              Mazboot, surakshit aur aasan bijli ke panels jo shock proof hain aur bijli ka bill bachate hain.
+              Durable, safe, and efficient electrical panels engineered to minimize line losses and prevent power interruptions.
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <Link to="/products" className="w-full sm:w-auto px-8 py-3.5 bg-industrial-cyan text-white hover:bg-white hover:text-slate-900 transition-all font-semibold rounded-md text-sm text-center tracking-wider uppercase font-heading shadow-lg shadow-industrial-cyan/15">
-                Hamare Samaan / Products
+                Our Products
               </Link>
               <Link to="/quote" className="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-white/30 hover:border-white text-white transition-all font-semibold rounded-md text-sm text-center tracking-wider uppercase font-heading">
-                Humse Baat Karein (Contact Us)
+                Request a Quote
               </Link>
             </div>
           </div>
@@ -90,37 +90,37 @@ export default function Home() {
             className="space-y-6"
           >
             <span className="font-heading font-semibold text-xs tracking-widest text-industrial-cyan uppercase">
-              Humare Baare Me (About Us)
+              About Us
             </span>
             <h2 className="font-heading font-bold text-3xl md:text-4.5xl text-slate-900 tracking-tight">
-              Badi Factories aur Buildings ke liye Bijli ke Boards ka Bharosa
+              Trusted Electrical Solutions for Industrial Factories & Buildings
             </h2>
             <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-              Anand Electricals ek bohot hi purani aur bharosemand company hai. Hum factory aur building ke liye bade-bade bijli ke boards aur safe switch box banate hain jo short circuit se bachate hain.
+              Anand Electricals & Engineers is a highly reliable electrical contracting firm. We specialize in designing and manufacturing high-durability distribution panels and safety enclosures that protect against short circuits.
             </p>
             <p className="text-slate-600 leading-relaxed text-sm">
-              Hum mazboot chadar lohe ka dabba banate hain aur aadhunik machines se unhe test karte hain. Hamare banaye boards ko chalana bohot aasan hai aur shock lagne ka bilkul darr nahi hota.
+              Our products are built with high-quality sheet metal, using automated manufacturing machines for precision and safety. All installations are completely shock-proof and built to last.
             </p>
             <Link to="/about" className="inline-flex items-center gap-2 text-industrial-cyan hover:text-slate-900 transition-colors font-semibold font-heading text-sm">
-              Hamare Baare Me Aur Jaanein <FaArrowRight size={12} />
+              Learn More About Us <FaArrowRight size={12} />
             </Link>
           </motion.div>
 
           <div className="grid grid-cols-2 gap-6">
             <div className="p-6 bg-slate-50 border border-slate-200/60 rounded-xl hover:border-industrial-cyan/20 transition-all duration-300 shadow-sm hover:shadow-md">
               <FaShieldAlt className="text-industrial-cyan text-3xl mb-4" />
-              <h4 className="font-heading font-semibold text-slate-900 mb-2">Shockproof aur Safe Samaan</h4>
-              <p className="text-slate-500 text-xs leading-relaxed">Hamara saara samaan poori tarah surakshit hai aur accidents se bachata hai.</p>
+              <h4 className="font-heading font-semibold text-slate-900 mb-2">Shockproof & Safe Design</h4>
+              <p className="text-slate-500 text-xs leading-relaxed">All products undergo strict insulation testing to eliminate short-circuit and leakage hazards.</p>
             </div>
             <div className="p-6 bg-slate-50 border border-slate-200/60 rounded-xl hover:border-industrial-cyan/20 transition-all duration-300 shadow-sm hover:shadow-md">
               <FaIndustry className="text-industrial-cyan text-3xl mb-4" />
-              <h4 className="font-heading font-semibold text-slate-900 mb-2">Mazboot Lohe ke Board</h4>
-              <p className="text-slate-500 text-xs leading-relaxed">Mazboot boxes jo dhoor, mitti aur pani se switches ko surakshit rakhte hain.</p>
+              <h4 className="font-heading font-semibold text-slate-900 mb-2">Durable Metal Enclosures</h4>
+              <p className="text-slate-500 text-xs leading-relaxed">Heavy-duty CRCA steel cabinets designed to protect switches from dust, rust, and water ingress.</p>
             </div>
             <div className="p-6 bg-slate-50 border border-slate-200/60 rounded-xl hover:border-industrial-cyan/20 transition-all duration-300 col-span-2 shadow-sm hover:shadow-md">
               <FaHandshake className="text-industrial-cyan text-3xl mb-4" />
-              <h4 className="font-heading font-semibold text-slate-900 mb-2">Sarkari License Wale (Govt Approved)</h4>
-              <p className="text-slate-500 text-xs leading-relaxed">Sarkar se approved A-Grade company hain, yaani sarkar bhi hamare kaam par bharosa karti hai.</p>
+              <h4 className="font-heading font-semibold text-slate-900 mb-2">Government Approved (Grade-A)</h4>
+              <p className="text-slate-500 text-xs leading-relaxed">Licensed A-Grade electrical contractor trusted by regional utilities and private developers.</p>
             </div>
           </div>
         </div>
@@ -132,14 +132,14 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-16">
             <div>
               <span className="font-heading font-semibold text-xs tracking-widest text-industrial-cyan uppercase mb-3 block">
-                Hamara Banaya Samaan
+                Our Capabilities
               </span>
               <h2 className="font-heading font-bold text-3xl md:text-4.5xl text-slate-900 tracking-tight">
-                Bijli ke Board aur Panel Systems
+                Industrial Switchgear & Panel Systems
               </h2>
             </div>
             <Link to="/products" className="text-industrial-cyan hover:text-slate-900 font-semibold text-sm inline-flex items-center gap-1.5 font-heading">
-              Saare Products Samaan Dekhein <FaArrowRight size={12} />
+              View All Products <FaArrowRight size={12} />
             </Link>
           </div>
 
@@ -162,10 +162,10 @@ export default function Home() {
                 </div>
                 <div className="flex justify-between items-center mt-4">
                   <Link to={`/products/${prod.slug}`} className="text-industrial-cyan text-sm font-semibold hover:text-slate-900 font-heading inline-flex items-center gap-1.5">
-                    Samaan ki Jankari <FaArrowRight size={10} />
+                    Product Details <FaArrowRight size={10} />
                   </Link>
                   <Link to={`/quote?product=${prod.id}`} className="px-3.5 py-1.5 bg-slate-55 border border-slate-200 hover:bg-industrial-cyan hover:text-white rounded text-xs transition-all font-semibold font-heading uppercase tracking-wider">
-                    Bhao/Price Poochhein (Enquire)
+                    Enquire Now
                   </Link>
                 </div>
               </motion.div>
@@ -179,10 +179,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="font-heading font-semibold text-xs tracking-widest text-industrial-cyan uppercase mb-3 block">
-              Hamari Sevaayein (Services)
+              Our Services
             </span>
             <h2 className="font-heading font-bold text-3xl md:text-4.5xl text-slate-900 tracking-tight">
-              Bijli ke Fittings aur Checking ka Kaam
+              Electrical Contracting & Engineering
             </h2>
           </div>
 
@@ -218,10 +218,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="font-heading font-semibold text-xs tracking-widest text-industrial-cyan uppercase mb-3 block">
-              Hum Kahan Kahan Kaam Karte Hain
+              Industries We Serve
             </span>
             <h2 className="font-heading font-bold text-3xl md:text-4.5xl text-slate-900 tracking-tight">
-              Factory, Dukaanein, Hotel aur Hospital sabhi ke liye
+              Electrical Infrastructure Across Diverse Sectors
             </h2>
           </div>
 
@@ -239,7 +239,7 @@ export default function Home() {
               <div key={i} className="p-6 bg-white border border-slate-200/60 rounded-xl hover:border-industrial-cyan/20 transition-all duration-300 text-center flex flex-col justify-center items-center h-32 group shadow-sm hover:shadow-md">
                 <span className="w-2 h-2 rounded-full bg-slate-200 group-hover:bg-industrial-cyan group-hover:shadow-[0_0_8px_#EA580C] mb-3 transition-all duration-300"></span>
                 <span className="font-heading font-semibold text-slate-500 group-hover:text-slate-900 transition-colors text-sm">
-                  {ind.hi}
+                  {ind.en}
                 </span>
               </div>
             ))}
@@ -268,19 +268,19 @@ export default function Home() {
               {/* Excerpt Message Column */}
               <div className="lg:col-span-8 space-y-6">
                 <span className="font-heading font-semibold text-xs tracking-widest text-industrial-cyan uppercase">
-                  Owner/Director ki Baat
+                  Director's Message
                 </span>
                 <h3 className="font-heading font-bold text-2.5xl md:text-3.5xl text-slate-900 tracking-tight leading-tight">
-                  Sahi kaam aur poori suraksha hamara maksad hai
+                  Ensuring Safety and Reliability in Every Installation
                 </h3>
                 <blockquote className="border-l-2 border-industrial-cyan pl-6 italic text-slate-600 text-base md:text-lg">
-                  "Anand Electricals me hum sirf wires aur boards nahi jodte, hum aaisa mazboot aur surakshit system banate hain jisse aapki factory bina kisi rukawat aur darr ke chalti rahe. Hum aapki suraksha aur bachat ka poora khyal rakhte hain."
+                  "At Anand Electricals, we don't just connect switchgear and wiring; we engineer resilient power infrastructure so your plant operates continuously and safely. We prioritize technical safety compliance and utility saving protocols above all."
                 </blockquote>
                 
                 <div className="flex justify-between items-center pt-4 border-t border-slate-200">
                   <div>
                     <h4 className="font-heading font-semibold text-slate-900">Amit Kumar</h4>
-                    <p className="text-slate-500 text-xs uppercase tracking-wider font-heading mt-0.5">Owner & Managing Director (Maalik)</p>
+                    <p className="text-slate-500 text-xs uppercase tracking-wider font-heading mt-0.5">Founder & Managing Director</p>
                   </div>
                   
                   {/* Signature */}
@@ -293,7 +293,7 @@ export default function Home() {
 
                 <div className="pt-2">
                   <Link to="/leadership" className="inline-flex items-center gap-2 text-industrial-cyan hover:text-slate-900 transition-colors font-semibold font-heading text-xs uppercase tracking-wider">
-                    Hamare Baare Me Aur Jaanein <FaArrowRight size={10} />
+                    Learn More About Us <FaArrowRight size={10} />
                   </Link>
                 </div>
               </div>
@@ -309,14 +309,14 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-16">
             <div>
               <span className="font-heading font-semibold text-xs tracking-widest text-industrial-cyan uppercase mb-3 block">
-                Hamara Pehle Kiya Hua Kaam
+                Featured Case Studies
               </span>
               <h2 className="font-heading font-bold text-3xl md:text-4.5xl text-slate-900 tracking-tight">
-                Bade Projects aur Kaam
+                Our Completed Projects
               </h2>
             </div>
             <Link to="/projects" className="text-industrial-cyan hover:text-slate-900 font-semibold text-sm inline-flex items-center gap-1.5 font-heading">
-              Saare Purane Kaam Dekhein <FaArrowRight size={12} />
+              View All Projects <FaArrowRight size={12} />
             </Link>
           </div>
 
@@ -344,7 +344,7 @@ export default function Home() {
                   <h3 className="font-heading font-bold text-xl text-slate-900">{proj.title}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed line-clamp-2">{proj.scope}</p>
                   <Link to={`/projects/${proj.slug}`} className="text-industrial-cyan text-sm font-semibold hover:text-slate-900 font-heading inline-flex items-center gap-1.5 pt-2">
-                    Kaise Kaam Kiya, Jaanein <FaArrowRight size={10} />
+                    View Case Study <FaArrowRight size={10} />
                   </Link>
                 </div>
               </div>
@@ -358,33 +358,33 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
           <div className="max-w-2xl mx-auto mb-16">
             <span className="font-heading font-semibold text-xs tracking-widest text-industrial-cyan uppercase mb-3 block">
-              Hamari Suraksha Certifications
+              Safety & Standards Compliance
             </span>
             <h2 className="font-heading font-bold text-3xl md:text-4.5xl text-slate-900 tracking-tight">
-              Sarkari aur Standard Checks
+              Accredited Quality and Certifications
             </h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="p-8 bg-slate-50 border border-slate-200/60 rounded-xl shadow-sm">
               <FaCertificate className="text-industrial-cyan text-4.5xl mx-auto mb-6" />
-              <h3 className="font-heading font-bold text-lg text-slate-900 mb-2">Quality Guarantee (ISO 9001)</h3>
-              <p className="text-slate-500 text-xs leading-relaxed">Kaam ki quality aur samaan sabse badhiya aur a-one rehta hai.</p>
+              <h3 className="font-heading font-bold text-lg text-slate-900 mb-2">Quality Management (ISO 9001)</h3>
+              <p className="text-slate-500 text-xs leading-relaxed">Ensuring premium grade fabrication materials and standard quality procedures.</p>
             </div>
             <div className="p-8 bg-slate-50 border border-slate-200/60 rounded-xl shadow-sm">
               <FaCertificate className="text-industrial-cyan text-4.5xl mx-auto mb-6" />
-              <h3 className="font-heading font-bold text-lg text-slate-900 mb-2">Kaam ki Suraksha (ISO 45001)</h3>
-              <p className="text-slate-500 text-xs leading-relaxed">Hamare workers aur factory me bijli ka kaam poori safety se hota hai.</p>
+              <h3 className="font-heading font-bold text-lg text-slate-900 mb-2">Safety Standards (ISO 45001)</h3>
+              <p className="text-slate-500 text-xs leading-relaxed">Prioritizing worksite safety protocols during active operations.</p>
             </div>
             <div className="p-8 bg-slate-50 border border-slate-200/60 rounded-xl shadow-sm">
               <FaCertificate className="text-industrial-cyan text-4.5xl mx-auto mb-6" />
-              <h3 className="font-heading font-bold text-lg text-slate-900 mb-2">A-Grade Sarkari License</h3>
-              <p className="text-slate-500 text-xs leading-relaxed">Sarkar dwara sabse badhe bijli kaams ke liye certified license holder.</p>
+              <h3 className="font-heading font-bold text-lg text-slate-900 mb-2">A-Grade Contracting License</h3>
+              <p className="text-slate-500 text-xs leading-relaxed">Licensed A-Grade electrical contractor authorized for heavy-duty grid installations.</p>
             </div>
             <div className="p-8 bg-slate-50 border border-slate-200/60 rounded-xl shadow-sm">
               <FaCertificate className="text-industrial-cyan text-4.5xl mx-auto mb-6" />
-              <h3 className="font-heading font-bold text-lg text-slate-900 mb-2">Short Circuit Proof (CPRI Tested)</h3>
-              <p className="text-slate-500 text-xs leading-relaxed">Switch boxes short circuit aur pani-dhool ko poori tarah jhelne me tested hain.</p>
+              <h3 className="font-heading font-bold text-lg text-slate-900 mb-2">CPRI Tested Assemblies</h3>
+              <p className="text-slate-500 text-xs leading-relaxed">Enclosures are tested to withstand short-circuits, dust, and moisture.</p>
             </div>
           </div>
         </div>
@@ -395,10 +395,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 md:px-12">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <span className="font-heading font-semibold text-xs tracking-widest text-industrial-cyan uppercase mb-3 block">
-              Log Hamare Baare Me Kya Kehte Hain
+              Client Feedback
             </span>
             <h2 className="font-heading font-bold text-3xl md:text-4.5xl text-slate-900 tracking-tight">
-              Hamare Grahako ke Anubhav (Testimonials)
+              What Our Clients Say About Us
             </h2>
           </div>
           <Testimonials />

@@ -12,13 +12,13 @@ export default function CTASection() {
           
           <div className="relative z-10 max-w-3xl mx-auto">
             <span className="font-heading font-semibold text-xs tracking-widest text-industrial-cyan uppercase mb-4 block">
-              Consult With Our Experts
+              Partner with Us
             </span>
             <h2 className="font-heading font-bold text-3xl md:text-4.5xl text-slate-900 leading-tight tracking-tight mb-6">
-              Let's Build Your Next Electrical Infrastructure Project
+              Ready to Power Your Next Industrial Project?
             </h2>
             <p className="font-body text-sm md:text-base text-industrial-muted mb-10 max-w-xl mx-auto leading-relaxed">
-              Partner with an engineering contractor trusted by leading Indian factories. Talk to our senior projects engineers today.
+              Get in touch with our electrical contracting team to receive customized switchgear layouts and itemized estimations.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
@@ -26,13 +26,13 @@ export default function CTASection() {
                 to="/quote" 
                 className="w-full sm:w-auto px-8 py-4 bg-industrial-cyan text-white hover:bg-slate-900 font-semibold rounded-md text-sm transition-all duration-300 tracking-wider uppercase font-heading shadow-md shadow-industrial-cyan/10"
               >
-                Request a Free Quote
+                Request Gated Quote
               </Link>
               <Link 
                 to="/contact" 
                 className="w-full sm:w-auto px-8 py-4 bg-transparent border border-slate-300 hover:border-industrial-cyan text-slate-800 hover:text-industrial-cyan font-semibold rounded-md text-sm transition-all duration-300 tracking-wider uppercase font-heading"
               >
-                Schedule Meeting
+                Schedule a Consultation
               </Link>
             </div>
           </div>

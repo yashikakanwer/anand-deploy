@@ -2,34 +2,34 @@
   {
     "id": "dg-set-panel",
     "slug": "dg-set-panel",
-    "name": "DG Set Control Panel (Generator Chalane Wala Board)",
-    "shortDescription": "Generator ko chalu aur band karne ke liye sabse aasan board.",
-    "description": "Yeh board generator ko chalu aur band karne ke kaam aata hai. Isme ek chhota screen laga hota hai jo generator ki speed aur oil (tel) ka level batata hai. Yeh generator ko kharab hone se bachata hai aur safe rakhta hai.",
+    "name": "DG Set Control Panel",
+    "shortDescription": "User-friendly control system to operate and monitor backup generators.",
+    "description": "This panel is used for starting and stopping generators. It features a digital screen showing engine speed, battery level, oil pressure, and voltage, protecting the generator from overload.",
     "specs": [
       {
         "name": "Screen System",
-        "value": "Automatic Controller (Chalu/Band karne wala)"
+        "value": "Automatic Controller (Microprocessor Based)"
       },
       {
         "name": "Power Capacity",
-        "value": "Factory and Badi Building ke liye"
+        "value": "Designed for Heavy Industrial & Commercial Generators"
       },
       {
         "name": "Metal Box",
-        "value": "Waterproof aur Strong Lohe ka Dabba"
+        "value": "Weatherproof & Dustproof Steel Enclosure"
       }
     ],
     "features": [
-      "Automatic chalu aur band ho jata hai",
-      "Kharab hone se pehle hi warning de deta hai",
-      "Emergency stop button laga hai turant band karne ke liye",
-      "Aasan wiring hai jisse repair karna aasan ho"
+      "Automatic start-stop functionality on power failure",
+      "Pre-failure warnings for low oil pressure or high temperature",
+      "Emergency stop switch for immediate shutdown",
+      "Clean, isolated wiring layout for easy maintenance"
     ],
     "applications": [
-      "Badi Factory aur Mill",
-      "Hospitals aur Schools",
-      "Bade Malls aur Hotels",
-      "Residential Societies (Ghar ke bade blocks)"
+      "Large factories and industrial mills",
+      "Hospitals and educational institutions",
+      "Shopping malls and commercial hotels",
+      "Residential apartments and societies"
     ],
     "catalogName": "dg-set-panel-catalog.pdf",
     "image": "https://www.anandelectricals.in/product/AMF-Control-Panel.jpg"
@@ -37,34 +37,34 @@
   {
     "id": "electric-control-panel",
     "slug": "electric-control-panel",
-    "name": "Electric Control Panel (Sadharan Bijli Board)",
-    "shortDescription": "Factory aur ghar ke liye bijli chalu-band karne ka aasan aur safe board.",
-    "description": "Yeh ek aasan bijli ka board hai jisse aap factory ki machines ko chalu aur band kar sakte hain. Ise chalana bohot surakshit hai, isme shock nahi lagta aur lohe ka dabba bohot mazboot hota hai.",
+    "name": "Electric Control Panel",
+    "shortDescription": "Safe, reliable power distribution board for factories and buildings.",
+    "description": "A standard distribution board used to route power and control machines safely. Designed with high-grade safety isolation features, eliminating shock hazards.",
     "specs": [
       {
         "name": "Copper Quality",
-        "value": "99.9% Shuddh Copper (Tamba) wires"
+        "value": "99.9% Pure Copper wires and busbars"
       },
       {
         "name": "Current Range",
-        "value": "Ghar se lekar Badi Factory tak ke liye"
+        "value": "Suitable for small workshops to large factories"
       },
       {
-        "name": "Lohe ki Patra",
-        "value": "Mazboot CRCA loha chadar (Strong Steel)"
+        "name": "Enclosure",
+        "value": "Robust CRCA sheet metal steel casing"
       }
     ],
     "features": [
-      "Har jagah ke hisab se chhota ya bada banaya ja sakta hai",
-      "Shockproof hai aur aag lagne ka khatra nahi hota",
-      "Mazboot powder coating hai jisse zang (rust) nahi lagta",
-      "Hawa aane-jaane ka rasta hai taaki board garam na ho"
+      "Fully customizable size and configuration",
+      "Shock-proof and fire-retardant design",
+      "Premium powder coating for rust and corrosion prevention",
+      "Optimal ventilation slots to prevent overheating"
     ],
     "applications": [
-      "Kapda aur Plastic Factory",
-      "Chhoti-badi dukaanein aur showroom",
-      "Cold Storage (Baraf khana)",
-      "Colleges aur Coaching Centers"
+      "Textile, plastic, and manufacturing factories",
+      "Showrooms, retail shops, and commercial offices",
+      "Cold storage and food processing facilities",
+      "Schools, colleges, and training institutes"
     ],
     "catalogName": "electric-panel-catalog.pdf",
     "image": "https://www.anandelectricals.in/product/Industrial-Electrical-Control-Panel.jpg"
@@ -72,34 +72,34 @@
   {
     "id": "ht-lt-panel",
     "slug": "ht-lt-panel",
-    "name": "HT LT Panel (Badi Line ka Board)",
-    "shortDescription": "Badi line ki bijli ko factory me baantne wala mazboot panel.",
-    "description": "Badi-badi factories me aane wali tezz bijli ko alag-alag machines tak surakshit tareeqe se pahunchane wala board. Yeh automatic kaam karta hai aur short circuit hone par bijli turant band kar deta hai taaki accident na ho.",
+    "name": "HT LT Panel",
+    "shortDescription": "High-capacity switchgear panel to safely distribute high-voltage utility power.",
+    "description": "Designed to distribute high-voltage electricity safely to various machinery groups in a plant. Includes automatic protection relays that cut off power during faults.",
     "specs": [
       {
         "name": "Voltage Range",
-        "value": "11kV (High Power) se lekar normal 415V tak"
+        "value": "11kV High-tension input down to 415V Low-tension distribution"
       },
       {
         "name": "Main Switch",
-        "value": "Automatic Safety Circuit Breaker"
+        "value": "Automatic Air / Vacuum Circuit Breaker"
       },
       {
         "name": "Safety Rating",
-        "value": "Short Circuit se poori tarah surakshit"
+        "value": "Short-circuit tested up to 50kA"
       }
     ],
     "features": [
-      "Badi power line ko sambhalne ke liye khas switches",
-      "Short circuit ya overload hone par apne aap trip ho jata hai",
-      "Galat operation ko rokne ke liye automatic lock system",
-      "Ek dum mazboot double door safety dabba"
+      "Specialized switchgear to handle high-voltage loads",
+      "Automatic trip action on short circuit or overload",
+      "Safety interlocks to prevent accidental contact",
+      "Double door steel enclosure with safety lock"
     ],
     "applications": [
-      "Bijli ke bade substations",
-      "Saria aur Cement banane ki factory",
-      "Heavy engineering plants",
-      "Solar Power Plants (Dhoop se bijli banane wali jagah)"
+      "Substations and grid infrastructure",
+      "Steel rolling mills and cement plants",
+      "Heavy engineering factories",
+      "Solar power projects"
     ],
     "catalogName": "ht-lt-panel-catalog.pdf",
     "image": "https://www.anandelectricals.in/product/electrical-ht-lt-distribution-panel.jpg"
@@ -107,13 +107,13 @@
   {
     "id": "apfc-panel",
     "slug": "apfc-panel",
-    "name": "APFC Panel (Bijli ka Bill Kam Karne Wala Board)",
-    "shortDescription": "Factory ka bijli ka bill kam karne aur power save karne wala panel.",
-    "description": "Yeh panel factory me chalne wali badi machines ki wajah se hone wale bijli ke nuksaan ko rokta hai. Isse aapki factory ka bijli ka bill kam ho jata hai aur sarkar ki taraf se koi penalty nahi lagti.",
+    "name": "APFC Panel",
+    "shortDescription": "Automatic Power Factor Correction panel to reduce energy bills and penalties.",
+    "description": "This panel monitors inductive loads in real-time and switches capacitor banks to improve power factor, reducing electricity bills and avoiding reactive energy penalties.",
     "specs": [
       {
         "name": "Controller",
-        "value": "Microprocessor Based Automatic power saver"
+        "value": "Microprocessor-based automatic power saver controller"
       },
       {
         "name": "Savings Capacitors",
@@ -121,20 +121,20 @@
       },
       {
         "name": "Heat Release",
-        "value": "Automatic fan system board thanda rakhne ke liye"
+        "value": "Integrated cooling fans to maintain optimum temperature"
       }
     ],
     "features": [
-      "Bijli ke power factor ko 0.99 tak banaye rakhta hai (High Efficiency)",
-      "Machines ko overvoltage se bachata hai",
-      "Automatic switch system hai, khud hi power save karta hai",
-      "Bijli board ki penalty se aapka paisa bachata hai"
+      "Maintains power factor at 0.99 for maximum efficiency",
+      "Protects industrial machinery from voltage spikes",
+      "Automatic operation, switching capacitors as load changes",
+      "Saves money by avoiding utility reactive energy penalties"
     ],
     "applications": [
-      "Plastic items banane wali factory",
-      "Motor garage aur mechanical workshop",
-      "Aata chakki (Flour Mill) aur oil mill",
-      "Bade commercial buildings aur offices"
+      "Plastic injection molding facilities",
+      "Automotive workshops and garage setups",
+      "Flour mills, oil mills, and heavy industries",
+      "Large offices, commercial complexes, and buildings"
     ],
     "catalogName": "apfc-catalog.pdf",
     "image": "https://www.anandelectricals.in/product/Three-Phase-Apfc-Panel.jpg"
@@ -142,34 +142,34 @@
   {
     "id": "pcc-panel",
     "slug": "pcc-panel",
-    "name": "PCC Panel (Main Power Control Board)",
-    "shortDescription": "Poori factory ki bijli ko ek hi jagah se control karne wala panel.",
-    "description": "Yeh poori factory ka main board hota hai. Yahan se aap poori building ya factory ki bijli ko ek saath band ya chalu kar sakte hain. Yeh bohot mazboot lohe se bana hota hai aur heavy load ko aasaani se jhelta hai.",
+    "name": "PCC Panel",
+    "shortDescription": "Power Control Center panel for centralized power distribution.",
+    "description": "Serves as the main distribution board for the entire plant. Enables safe and centralized monitoring and control of the complete facility's power supply.",
     "specs": [
       {
         "name": "Current Capacity",
-        "value": "800A se 6300A (Badi factories ke liye)"
+        "value": "800A to 6300A for large-scale operations"
       },
       {
         "name": "Safety Breaker",
-        "value": "Air Circuit Breakers (Automatic Switches)"
+        "value": "Air Circuit Breakers (ACB) and Moulded Case Circuit Breakers (MCCB)"
       },
       {
         "name": "Enclosure Safety",
-        "value": "Dust and Water resistant (Dhoor-mitti se surakshit)"
+        "value": "IP54/IP55 rated dust and water resistant casing"
       }
     ],
     "features": [
-      "Mazboot copper busbars jo heavy load jhel sakein",
-      "Bina heat huye lagatar chalne ki shamta",
-      "Screen par dikhta hai kaunsi line me kitni bijli ja rahi hai",
-      "Double door safety lock compartment"
+      "High-conductivity copper busbars to handle large currents",
+      "Robust heat dissipation design for continuous duty",
+      "Digital metering showing active line currents and voltages",
+      "Isolated cubicle structure for enhanced safety"
     ],
     "applications": [
-      "Bade Infrastructure projects",
-      "Steel rolling mills aur iron factories",
-      "Hospitals aur commercial business hubs",
-      "Mining aur Pathar crushing sites"
+      "Infrastructure projects and large industries",
+      "Steel plants and iron foundries",
+      "Hospitals and large business parks",
+      "Mining and stone crushing operations"
     ],
     "catalogName": "pcc-catalog.pdf",
     "image": "https://www.anandelectricals.in/product/Power-Control-Center.jpg"
@@ -177,34 +177,34 @@
   {
     "id": "fire-hydrant-panel",
     "slug": "fire-hydrant-panel",
-    "name": "Fire Hydrant Panel (Aag Bujhane Wali Machine ka Board)",
-    "shortDescription": "Aag lagne par pani ke pumps ko automatic chalane wala emergency panel.",
-    "description": "Agar building ya factory me aag lag jaye, toh yeh board automatic pani ke pump ko chalu kar deta hai taaki aag ko jaldi se jaldi bujhayi ja sake. Yeh panel har samay standby par rehta hai aur aapaat-kaal me khud hi chalu ho jata hai.",
+    "name": "Fire Hydrant Panel",
+    "shortDescription": "Emergency control panel to run firefighting water pumps automatically.",
+    "description": "Automatically triggers firefighting water pumps when a drop in water line pressure is detected, ensuring immediate water supply in case of fire emergencies.",
     "specs": [
       {
         "name": "Start Type",
-        "value": "Automatic Star-Delta / Soft Starter"
+        "value": "Automatic Star-Delta or Soft Starter to prevent power surges"
       },
       {
         "name": "Sensors Connection",
-        "value": "Water Pressure Sensor based"
+        "value": "Water pressure sensor based automatic start"
       },
       {
         "name": "Alarm Support",
-        "value": "Hooter / Siren aag lagne ka shor karne ke liye"
+        "value": "Integrated hooter / siren for audible alert during fire activation"
       }
     ],
     "features": [
-      "Pressure kam hote hi apne aap pump chalu kar deta hai",
-      "Emergency siren ko bajata hai sabko satark karne ke liye",
-      "Battery backup system taaki bijli jaane par bhi pump chale",
-      "Waterproof coating taaki pani padne par bhi short circuit na ho"
+      "Launches pump automatically when pipeline pressure drops",
+      "Triggers alarm to alert occupants immediately",
+      "Auxiliary battery support for control unit",
+      "Weatherproof IP65 enclosure protection"
     ],
     "applications": [
-      "Badi building aur aawas complexes",
-      "Industrial manufacturing hubs",
-      "Chemical aur paint factory (Jahan aag ka zyada darr ho)",
-      "Godown aur warehouse"
+      "Residential apartments and housing complexes",
+      "Manufacturing plants and chemical units",
+      "Warehouses and logistics depots",
+      "Hotels, commercial malls, and high-rise buildings"
     ],
     "catalogName": "fire-hydrant-catalog.pdf",
     "image": "https://www.anandelectricals.in/product/AMF-Control-Panel.jpg"
