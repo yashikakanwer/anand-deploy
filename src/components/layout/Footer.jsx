@@ -91,15 +91,20 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-3">
               <FaEnvelope className="text-industrial-cyan flex-shrink-0" />
-              <a href="mailto:anandelectricals1984@gmail.com" className="hover:text-industrial-cyan transition-colors">
-                anandelectricals1984@gmail.com
+              <a href="mailto:anandelectricalsoffice@gmail.com" className="hover:text-industrial-cyan transition-colors">
+                anandelectricalsoffice@gmail.com
               </a>
             </div>
-            <div className="flex items-center gap-3">
-              <FaPhoneAlt className="text-industrial-cyan flex-shrink-0" />
-              <a href="tel:+919694700750" className="hover:text-industrial-cyan transition-colors">
-                +91 96947 00750
-              </a>
+            <div className="flex items-start gap-3">
+              <FaPhoneAlt className="text-industrial-cyan mt-1 flex-shrink-0" />
+              <div className="flex flex-col gap-1">
+                <a href="tel:+917689057259" className="hover:text-industrial-cyan transition-colors">
+                  +91 76890 57259
+                </a>
+                <a href="tel:+919001347691" className="hover:text-industrial-cyan transition-colors">
+                  +91 90013 47691
+                </a>
+              </div>
             </div>
           </div>
 

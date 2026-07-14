@@ -75,7 +75,7 @@ export default function FloatingWidgets() {
   const [isTyping, setIsTyping] = useState(false);
   const chatBodyRef = useRef(null);
 
-  const primaryPhone = '+919694700750';
+  const primaryPhone = '+917689057259';
   const whatsappMessage = 'Hello Anand Electricals, I would like to inquire about your industrial electrical panels and contracting services.';
 
   const scrollToBottom = () => {
@@ -146,7 +146,7 @@ export default function FloatingWidgets() {
 
     // 6. CONTACT / PHONE / EMAIL (loose matches: 'number', 'mobile', 'call', 'email', 'mail', 'phone')
     if (q.match(/\b(phone|number|contact|call|email|mail|address|support|whatsapp|no\.|no)\b/) || q.includes("phone number") || q.includes("email id") || q.includes("mail id") || q.includes("gmail") || q.includes("g-mail")) {
-      return `Here are our contact coordinates:\n• **Phone Numbers**: +91 9694700750 / +91 9782062361\n• **Email Address**: anandelectricals1984@gmail.com\n• **Office Address**: Sarna Industrial Area, Jaipur.\n\nAlternatively, you can submit an instant inquiry using our online form on the [Contact page](/contact).`;
+      return `Here are our contact coordinates:\n• **Phone Numbers**: +91 7689057259 / +91 9001347691\n• **Email Address**: anandelectricalsoffice@gmail.com\n• **Office Address**: Sarna Industrial Area, Jaipur.\n\nAlternatively, you can submit an instant inquiry using our online form on the [Contact page](/contact).`;
     }
 
     // 7. SPECIFIC PANEL SEARCH (loose lookup for products in the query)
@@ -197,7 +197,7 @@ export default function FloatingWidgets() {
     }
 
     // Fallback conversational responder
-    return `I see you are asking about something interesting! I can help you with:\n• Finding **product specs** (e.g. APFC Panel, DG Set Panel, Transformers)\n• Information about our owner (**Amit Kumar**)\n• Our **Jaipur factory location** and contact numbers\n• How to get a **commercial quote** or find **jobs**\n\nWhat would you like to know more about? You can also call us directly at **+91 9694700750**!`;
+    return `I see you are asking about something interesting! I can help you with:\n• Finding **product specs** (e.g. APFC Panel, DG Set Panel, Transformers)\n• Information about our owner (**Amit Kumar**)\n• Our **Jaipur factory location** and contact numbers\n• How to get a **commercial quote** or find **jobs**\n\nWhat would you like to know more about? You can also call us directly at **+91 7689057259**!`;
   };
 
   const handleSuggestionClick = (text) => {

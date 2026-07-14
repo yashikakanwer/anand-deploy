@@ -59,11 +59,15 @@ export default function Navbar() {
       }`}>
         {/* Left Orange slanted segment */}
         <div className="topbar-left-slant bg-industrial-cyan h-full flex items-center pl-6 md:pl-12 pr-16 gap-6 font-semibold font-heading select-all w-fit min-w-[55%]">
-          <a href="mailto:anandelectricals1984@gmail.com" className="flex items-center gap-2 hover:text-[#0a0f18] transition-colors">
-            <FaEnvelope /> <span>anandelectricals1984@gmail.com</span>
+          <a href="mailto:anandelectricalsoffice@gmail.com" className="flex items-center gap-2 hover:text-[#0a0f18] transition-colors">
+            <FaEnvelope /> <span>anandelectricalsoffice@gmail.com</span>
           </a>
-          <a href="tel:+919694700750" className="flex items-center gap-2 hover:text-[#0a0f18] transition-colors">
-            <FaPhoneAlt /> <span>+91 9694700750</span>
+          <a href="tel:+917689057259" className="flex items-center gap-2 hover:text-[#0a0f18] transition-colors">
+            <FaPhoneAlt /> <span>+91 76890 57259</span>
+          </a>
+          <span className="text-[#0a0f18]/30">|</span>
+          <a href="tel:+919001347691" className="flex items-center gap-2 hover:text-[#0a0f18] transition-colors">
+            <span>+91 90013 47691</span>
           </a>
         </div>
 

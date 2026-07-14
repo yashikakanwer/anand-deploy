@@ -30,7 +30,7 @@ export default function Quote() {
               </div>
               <div className="flex items-center gap-3 text-slate-500">
                 <FaEnvelope className="text-industrial-cyan text-base flex-shrink-0" />
-                <span>Direct email for drawings: anandelectricals1984@gmail.com</span>
+                <span>Direct email for drawings: anandelectricalsoffice@gmail.com</span>
               </div>
             </div>
             

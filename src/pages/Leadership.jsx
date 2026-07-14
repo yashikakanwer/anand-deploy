@@ -3,6 +3,7 @@ import PageBanner from '../components/sections/PageBanner';
 import CTASection from '../components/sections/CTASection';
 import { FaLinkedin, FaAward, FaBuilding, FaRoad } from 'react-icons/fa';
 import directorImg from '../assets/director.png';
+import deepeshImg from '../assets/deepesh.jpg';
 
 export default function Leadership() {
   const timeline = [
@@ -148,6 +149,54 @@ export default function Leadership() {
 
           </div>
 
+        </div>
+      </section>
+
+      {/* Team / Management Section */}
+      <section className="py-20 md:py-24 bg-slate-50 border-t border-slate-200/60">
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="text-center max-w-2xl mx-auto mb-16">
+            <span className="font-heading font-semibold text-xs tracking-widest text-industrial-cyan uppercase mb-3 block">
+              Our Professional Team
+            </span>
+            <h2 className="font-heading font-bold text-3xl md:text-4.5xl text-slate-900 tracking-tight">
+              Management & Team Leaders
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-center">
+            {/* Team Member 1: Deepesh Singh Rajput */}
+            <div className="bg-white border border-slate-200/60 rounded-2xl p-6 shadow-md space-y-6 max-w-sm mx-auto w-full">
+              <div className="aspect-[4/5] rounded-xl overflow-hidden border border-slate-200 relative">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-100/80 to-transparent opacity-50 z-10"></div>
+                <img 
+                  src={deepeshImg} 
+                  alt="Online Team Manager Deepesh Singh Rajput" 
+                  className="w-full h-full object-cover transition-all duration-500 scale-102"
+                />
+              </div>
+
+              <div>
+                <h3 className="font-heading font-bold text-xl text-slate-900">Deepesh Singh Rajput</h3>
+                <p className="text-industrial-cyan text-xs uppercase tracking-wider font-heading mt-0.5">Online Team Manager</p>
+                <p className="text-slate-600 text-xs mt-3 leading-relaxed">
+                  Coordinates digital workflows, online client queries, site proposals, and online sales operations.
+                </p>
+              </div>
+
+              <div className="pt-4 border-t border-slate-200 flex items-center justify-between">
+                <span className="text-xs text-slate-500">Connect:</span>
+                <a 
+                  href="https://linkedin.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center gap-2 px-4 py-2 bg-industrial-cyan text-white font-semibold rounded text-xs transition-colors hover:bg-slate-900 shadow-md shadow-industrial-cyan/10"
+                >
+                  <FaLinkedin size={14} /> Profile
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

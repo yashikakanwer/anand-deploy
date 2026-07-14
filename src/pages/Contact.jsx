@@ -36,8 +36,8 @@ export default function Contact() {
                 <div>
                   <h4 className="font-heading font-semibold text-slate-900 mb-1">Email Inquiries</h4>
                   <p className="text-slate-600">
-                    <a href="mailto:anandelectricals1984@gmail.com" className="hover:text-industrial-cyan transition-colors">
-                      anandelectricals1984@gmail.com
+                    <a href="mailto:anandelectricalsoffice@gmail.com" className="hover:text-industrial-cyan transition-colors">
+                      anandelectricalsoffice@gmail.com
                     </a>
                   </p>
                 </div>
@@ -47,11 +47,14 @@ export default function Contact() {
                 <FaPhoneAlt className="text-industrial-cyan text-xl flex-shrink-0 mt-1" />
                 <div>
                   <h4 className="font-heading font-semibold text-slate-900 mb-1">Phone Support</h4>
-                  <p className="text-slate-600">
-                    <a href="tel:+919694700750" className="hover:text-industrial-cyan transition-colors">
-                      +91 96947 00750
+                  <div className="text-slate-600 flex flex-col gap-1">
+                    <a href="tel:+917689057259" className="hover:text-industrial-cyan transition-colors">
+                      +91 76890 57259
                     </a>
-                  </p>
+                    <a href="tel:+919001347691" className="hover:text-industrial-cyan transition-colors">
+                      +91 90013 47691
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
