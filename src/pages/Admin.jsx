@@ -192,7 +192,9 @@ function Sidebar({ activeTab, setActiveTab, user, onLogout }) {
     { id: 'products', label: 'Products', icon: <FaBoxOpen /> },
     { id: 'projects', label: 'Project', icon: <FaBuilding /> },
     { id: 'services', label: 'Services', icon: <FaCogs /> },
-    { id: 'inquiries', label: 'Inquiries', icon: <FaInbox />, countKey: 'inquiries' }
+    { id: 'inquiries', label: 'Inquiries', icon: <FaInbox />, countKey: 'inquiries' },
+    { id: 'applications', label: 'Applications', icon: <FaFileAlt />, countKey: 'applications' },
+    { id: 'jobs', label: 'Careers/Jobs', icon: <FaBriefcase /> }
   ];
 
   const getUnreadCount = (key) => {
@@ -573,6 +575,11 @@ function DashboardTab({ setActiveTab }) {
               ))
             )}
           </div>
+        </div>
+
+        {/* Visitor Stats Card */}
+        <div className="lg:col-span-1">
+          <VisitorStatsCard />
         </div>
       </div>
     </div>
