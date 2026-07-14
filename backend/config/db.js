@@ -9,6 +9,10 @@ const connectDB = async () => {
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
     console.warn(`Local MongoDB connection failed: ${error.message}`);
+    if (process.env.NODE_ENV === 'production' || process.env.VERCEL) {
+      console.error('CRITICAL: MONGODB_URI environment variable is not defined. In-memory MongoDB fallback is disabled in production/Vercel.');
+      process.exit(1);
+    }
     console.log('Attempting to start in-memory MongoDB fallback...');
     
     try {

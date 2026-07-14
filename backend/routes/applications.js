@@ -7,7 +7,9 @@ const Application = require('../models/Application');
 const { protect } = require('../middleware/auth');
 
 // Make sure uploads folder exists
-const uploadDir = path.join(__dirname, '../uploads');
+const uploadDir = process.env.VERCEL
+  ? '/tmp'
+  : path.join(__dirname, '../uploads');
 if (!fs.existsSync(uploadDir)) {
   fs.mkdirSync(uploadDir, { recursive: true });
 }
