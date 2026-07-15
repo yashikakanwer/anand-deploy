@@ -1,5 +1,8 @@
 const mongoose = require('mongoose');
 
+// Disable command buffering globally so queries fail fast rather than hanging
+mongoose.set('bufferCommands', false);
+
 const connectDB = async () => {
   try {
     console.log(`Connecting to database: ${process.env.MONGODB_URI}...`);
@@ -10,8 +13,8 @@ const connectDB = async () => {
   } catch (error) {
     console.warn(`Local MongoDB connection failed: ${error.message}`);
     if (process.env.NODE_ENV === 'production' || process.env.VERCEL) {
-      console.error('CRITICAL: MONGODB_URI environment variable is not defined. In-memory MongoDB fallback is disabled in production/Vercel.');
-      process.exit(1);
+      console.error('CRITICAL: MongoDB connection failed in production. Server will run without active DB connection to prevent Passenger crash loops.');
+      return;
     }
     console.log('Attempting to start in-memory MongoDB fallback...');
     

@@ -5,6 +5,7 @@ const path = require('path');
 const fs = require('fs');
 const Application = require('../models/Application');
 const { protect } = require('../middleware/auth');
+const dbHelper = require('../config/dbHelper');
 
 // Make sure uploads folder exists
 const uploadDir = process.env.VERCEL
@@ -42,7 +43,7 @@ const upload = multer({
 // @access  Private
 router.get('/', protect, async (req, res) => {
   try {
-    const apps = await Application.find({}).sort({ date: -1 });
+    const apps = await dbHelper.find(Application, 'applications.json', {}, { date: -1 });
     res.json(apps);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -57,8 +58,9 @@ router.post('/', upload.single('resume'), async (req, res) => {
   const cvName = req.file ? req.file.filename : (req.body.cvName || 'resume_uploaded.pdf');
 
   try {
-    const newApp = new Application({
-      id: `app-${Date.now()}`,
+    const appId = `app-${Date.now()}`;
+    const newApp = {
+      id: appId,
       name,
       email,
       phone: phone || 'N/A',
@@ -66,9 +68,9 @@ router.post('/', upload.single('resume'), async (req, res) => {
       status: 'Pending',
       cvName,
       date: new Date()
-    });
+    };
 
-    await newApp.save();
+    await dbHelper.save(Application, 'applications.json', 'id', appId, newApp);
     res.status(201).json(newApp);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -82,13 +84,14 @@ router.put('/:id', protect, async (req, res) => {
   const { status } = req.body;
 
   try {
-    const app = await Application.findOne({ id: req.params.id });
+    const app = await dbHelper.findOne(Application, 'applications.json', { id: req.params.id });
 
     if (app) {
-      app.status = status || app.status;
-      await app.save();
+      await dbHelper.save(Application, 'applications.json', 'id', req.params.id, {
+        status: status || app.status
+      });
 
-      const allApps = await Application.find({}).sort({ date: -1 });
+      const allApps = await dbHelper.find(Application, 'applications.json', {}, { date: -1 });
       res.json(allApps);
     } else {
       res.status(404).json({ message: 'Application not found' });
@@ -103,7 +106,7 @@ router.put('/:id', protect, async (req, res) => {
 // @access  Private
 router.delete('/:id', protect, async (req, res) => {
   try {
-    const app = await Application.findOne({ id: req.params.id });
+    const app = await dbHelper.findOne(Application, 'applications.json', { id: req.params.id });
 
     if (app) {
       // If there is an uploaded file, delete it from disk
@@ -114,8 +117,8 @@ router.delete('/:id', protect, async (req, res) => {
         }
       }
 
-      await Application.deleteOne({ id: req.params.id });
-      const allApps = await Application.find({}).sort({ date: -1 });
+      await dbHelper.deleteOne(Application, 'applications.json', 'id', req.params.id);
+      const allApps = await dbHelper.find(Application, 'applications.json', {}, { date: -1 });
       res.json(allApps);
     } else {
       res.status(404).json({ message: 'Application not found' });

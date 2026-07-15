@@ -2,13 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Job = require('../models/Job');
 const { protect } = require('../middleware/auth');
+const dbHelper = require('../config/dbHelper');
 
 // @desc    Get all jobs
 // @route   GET /api/jobs
 // @access  Public
 router.get('/', async (req, res) => {
   try {
-    const jobs = await Job.find({});
+    const jobs = await dbHelper.find(Job, 'jobs.json');
     res.json(jobs);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -23,26 +24,16 @@ router.post('/', protect, async (req, res) => {
 
   try {
     const jobId = id || `job-${Date.now()}`;
-    let job = await Job.findOne({ id: jobId });
 
-    if (job) {
-      job.title = title || job.title;
-      job.location = location || job.location;
-      job.type = type || job.type;
-      job.reqs = reqs || job.reqs;
-      await job.save();
-    } else {
-      job = new Job({
-        id: jobId,
-        title,
-        location,
-        type,
-        reqs
-      });
-      await job.save();
-    }
+    await dbHelper.save(Job, 'jobs.json', 'id', jobId, {
+      id: jobId,
+      title,
+      location,
+      type,
+      reqs
+    });
 
-    const allJobs = await Job.find({});
+    const allJobs = await dbHelper.find(Job, 'jobs.json');
     res.json(allJobs);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -54,11 +45,9 @@ router.post('/', protect, async (req, res) => {
 // @access  Private
 router.delete('/:id', protect, async (req, res) => {
   try {
-    const job = await Job.findOne({ id: req.params.id });
-
-    if (job) {
-      await Job.deleteOne({ id: req.params.id });
-      const allJobs = await Job.find({});
+    const deleted = await dbHelper.deleteOne(Job, 'jobs.json', 'id', req.params.id);
+    if (deleted) {
+      const allJobs = await dbHelper.find(Job, 'jobs.json');
       res.json(allJobs);
     } else {
       res.status(404).json({ message: 'Job not found' });

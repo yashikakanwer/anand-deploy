@@ -1,0 +1,32 @@
+[
+  {
+    "id": "understanding-power-factor",
+    "slug": "understanding-power-factor",
+    "title": "Understanding Power Factor: Saving Energy and Costs",
+    "summary": "Learn how low power factor increases electricity bills, triggers utility penalties, and how APFC panels solve this problem.",
+    "content": "In heavy industries, running large motors and welding machines can drop the system's power factor. A low power factor causes inefficient energy consumption and prompts electricity utilities to charge penalties, leading to higher bills. Installing Automatic Power Factor Correction (APFC) panels solves this by automatically switching capacitor banks on and off, keeping the power factor near 0.99 and reducing monthly energy charges.",
+    "author": "Amit Kumar",
+    "date": "May 15, 2026",
+    "readTime": "6 min read"
+  },
+  {
+    "id": "industrial-automation-scada",
+    "slug": "industrial-automation-scada",
+    "title": "Integrating PLC Panels with SCADA Automation",
+    "summary": "Discover how connecting PLC controllers to supervisory screens enables real-time automation in factories.",
+    "content": "Modern plant automation relies on PLC control panels communicating with central SCADA software. PLC panels track machine status, speeds, and temperatures in real-time, sending this data to centralized monitor screens. This setup allows operators to control and supervise the entire factory workflow from one station. Proper wiring and communication protocol setups prevent interference and ensure smooth data transfer.",
+    "author": "Amit Kumar",
+    "date": "June 10, 2026",
+    "readTime": "8 min read"
+  },
+  {
+    "id": "safety-standards-earthing",
+    "slug": "safety-standards-earthing",
+    "title": "Why Factories Need Advanced Chemical Earthing",
+    "summary": "Traditional salt and charcoal grounding grids are outdated. Learn why chemical earthing is the new standard for safety.",
+    "content": "Grounding systems in substations and factories are critical to discharge short-circuit faults and lightning surges safely. Traditional grounding using charcoal and salt degrades within a few years as rain washes away the conductive ions. Modern chemical earthing solves this by using copper-bonded steel electrodes surrounded by moisture-retaining chemical compound powders. It maintains resistance below 1.0 Ohm and delivers reliable protection for over 15 years with minimal maintenance.",
+    "author": "Amit Kumar",
+    "date": "June 20, 2026",
+    "readTime": "5 min read"
+  }
+]

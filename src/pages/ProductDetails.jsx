@@ -78,9 +78,9 @@ export default function ProductDetails() {
               <div className="bg-slate-50 border border-slate-200/60 rounded-xl overflow-hidden shadow-md">
                 <table className="w-full text-left border-collapse text-sm">
                   <tbody>
-                    {product.specs.map((spec, index) => {
-                      const name = typeof spec === 'object' ? spec.name : spec.split(':')[0] || '';
-                      const value = typeof spec === 'object' ? spec.value : spec.split(':')[1] || '';
+                    {(product.specs || []).map((spec, index) => {
+                      const name = typeof spec === 'object' ? spec.name : (spec.split ? spec.split(':')[0] : '') || '';
+                      const value = typeof spec === 'object' ? spec.value : (spec.split ? spec.split(':')[1] : '') || '';
                       return (
                         <tr key={index} className="border-b border-slate-200/60 last:border-0 hover:bg-slate-100/50 transition-colors">
                           <td className="px-6 py-4 font-heading font-semibold text-slate-500 w-1/3">{name}</td>
@@ -97,7 +97,7 @@ export default function ProductDetails() {
             <div className="space-y-6">
               <h3 className="font-heading font-bold text-xl text-slate-900">Engineering Features</h3>
               <ul className="space-y-3.5">
-                {product.features.map((feat, index) => (
+                {(product.features || []).map((feat, index) => (
                   <li key={index} className="flex items-start gap-3.5 text-sm text-slate-600 leading-relaxed">
                     <span className="w-5 h-5 rounded-full bg-industrial-cyan/10 border border-industrial-cyan/20 flex items-center justify-center text-industrial-cyan flex-shrink-0 mt-0.5">
                       <FaCheck size={10} />
@@ -112,7 +112,7 @@ export default function ProductDetails() {
             <div className="space-y-6">
               <h3 className="font-heading font-bold text-xl text-slate-900">Target Applications</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {product.applications.map((app, index) => (
+                {(product.applications || []).map((app, index) => (
                   <div key={index} className="p-4 bg-slate-50 border border-slate-200/60 rounded-lg flex items-center gap-3 shadow-sm">
                     <FaIndustry className="text-industrial-cyan flex-shrink-0" />
                     <span className="text-sm font-semibold text-slate-800">{app}</span>

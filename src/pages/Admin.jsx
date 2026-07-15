@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../utils/db';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   FaTachometerAlt, FaBoxOpen, FaBuilding, FaCogs, FaNewspaper, 
   FaInbox, FaFileAlt, FaBriefcase, FaSignOutAlt, FaPlus, 
@@ -589,6 +589,7 @@ function DashboardTab({ setActiveTab }) {
    TAB: PRODUCTS MANAGEMENT
    ========================================================================== */
 function ProductsTab() {
+  const navigate = useNavigate();
   const [products, setProducts] = useState([]);
   const [search, setSearch] = useState('');
   const [view, setView] = useState('list'); // 'list', 'form'
@@ -645,7 +646,7 @@ function ProductsTab() {
     }
   };
 
-  const handleSave = (e) => {
+  const handleSave = async (e) => {
     e.preventDefault();
     const productPayload = {
       name,
@@ -663,9 +664,14 @@ function ProductsTab() {
       productPayload.slug = editProduct.slug;
     }
 
-    db.saveProduct(productPayload);
-    setView('list');
-    loadProducts();
+    try {
+      await db.saveProduct(productPayload);
+      alert('Product saved successfully.');
+      setView('list');
+      loadProducts();
+    } catch (err) {
+      alert('Failed to save product: ' + err.message);
+    }
   };
 
   const filteredProducts = products.filter(p => 
@@ -1030,6 +1036,7 @@ function ProductsTab() {
    TAB: PROJECTS (CASE STUDIES) MANAGEMENT
    ========================================================================== */
 function ProjectsTab() {
+  const navigate = useNavigate();
   const [projects, setProjects] = useState([]);
   const [search, setSearch] = useState('');
   const [view, setView] = useState('list'); // 'list', 'form'
@@ -1107,7 +1114,7 @@ function ProjectsTab() {
     }
   };
 
-  const handleSave = (e) => {
+  const handleSave = async (e) => {
     e.preventDefault();
     const payload = {
       title,
@@ -1130,9 +1137,14 @@ function ProjectsTab() {
       payload.slug = editProject.slug;
     }
 
-    db.saveProject(payload);
-    setView('list');
-    loadProjects();
+    try {
+      await db.saveProject(payload);
+      alert('Project saved successfully.');
+      setView('list');
+      loadProjects();
+    } catch (err) {
+      alert('Failed to save project: ' + err.message);
+    }
   };
 
   // Drag & Drop handlers for multiple images
@@ -1619,6 +1631,7 @@ function ProjectsTab() {
    TAB: SERVICES MANAGEMENT
    ========================================================================== */
 function ServicesTab() {
+  const navigate = useNavigate();
   const [services, setServices] = useState([]);
   const [view, setView] = useState('list'); // 'list', 'form'
   const [editService, setEditService] = useState(null);
@@ -1660,7 +1673,7 @@ function ServicesTab() {
     }
   };
 
-  const handleSave = (e) => {
+  const handleSave = async (e) => {
     e.preventDefault();
     const payload = {
       title,
@@ -1674,9 +1687,14 @@ function ServicesTab() {
       payload.slug = editService.slug;
     }
 
-    db.saveService(payload);
-    setView('list');
-    load();
+    try {
+      await db.saveService(payload);
+      alert('Service saved successfully.');
+      setView('list');
+      load();
+    } catch (err) {
+      alert('Failed to save service: ' + err.message);
+    }
   };
 
   if (view === 'form') {

@@ -1,10 +1,15 @@
 import axios from 'axios';
+import productsData from '../data/products.json';
+import projectsData from '../data/projects.json';
+import servicesData from '../data/services.json';
+import blogsData from '../data/blogs.json';
 
-const API_URL = import.meta.env.DEV ? 'http://localhost:5000/api' : '/api';
+const API_URL = import.meta.env.DEV ? 'http://localhost:5000/api' : 'https://anandelectricals.in/api';
 
-// Create Axios Instance
+// Create Axios Instance with timeout
 const api = axios.create({
   baseURL: API_URL,
+  timeout: 5000,
 });
 
 // Automatically set Auth Header if token exists
@@ -23,12 +28,12 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Cache variables for synchronous returns
+// Cache variables for synchronous returns initialized with static fallbacks
 let cache = {
-  products: [],
-  projects: [],
-  services: [],
-  blogs: [],
+  products: productsData || [],
+  projects: projectsData || [],
+  services: servicesData || [],
+  blogs: blogsData || [],
   jobs: [],
   inquiries: [],
   applications: [],
@@ -353,18 +358,6 @@ export const db = {
       return null;
     } catch (error) {
       console.error('Login error:', error);
-      // Fallback local check when backend is down/offline for development convenience
-      if (username === 'admin' && password === 'electrical@2026') {
-        const fallbackUser = {
-          id: 'fallback-admin-id',
-          name: 'Super Admin (Offline)',
-          username: 'admin',
-          role: 'Admin',
-          token: 'offline-fallback-token'
-        };
-        localStorage.setItem('anand_admin_user', JSON.stringify(fallbackUser));
-        return fallbackUser;
-      }
       throw error;
     }
   },

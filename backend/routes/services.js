@@ -2,13 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Service = require('../models/Service');
 const { protect } = require('../middleware/auth');
+const dbHelper = require('../config/dbHelper');
 
 // @desc    Get all services
 // @route   GET /api/services
 // @access  Public
 router.get('/', async (req, res) => {
   try {
-    const services = await Service.find({});
+    const services = await dbHelper.find(Service, 'services.json');
     res.json(services);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -22,28 +23,18 @@ router.post('/', protect, async (req, res) => {
   const { id, title, description, features } = req.body;
 
   try {
-    const slug = id || title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
     const serviceId = id || `serv-${Date.now()}`;
+    const slug = id || title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 
-    let service = await Service.findOne({ id: serviceId });
+    await dbHelper.save(Service, 'services.json', 'id', serviceId, {
+      id: serviceId,
+      slug,
+      title,
+      description,
+      features
+    });
 
-    if (service) {
-      service.title = title || service.title;
-      service.description = description || service.description;
-      service.features = features || service.features;
-      await service.save();
-    } else {
-      service = new Service({
-        id: serviceId,
-        slug,
-        title,
-        description,
-        features
-      });
-      await service.save();
-    }
-
-    const allServices = await Service.find({});
+    const allServices = await dbHelper.find(Service, 'services.json');
     res.json(allServices);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -55,11 +46,9 @@ router.post('/', protect, async (req, res) => {
 // @access  Private
 router.delete('/:id', protect, async (req, res) => {
   try {
-    const service = await Service.findOne({ id: req.params.id });
-
-    if (service) {
-      await Service.deleteOne({ id: req.params.id });
-      const allServices = await Service.find({});
+    const deleted = await dbHelper.deleteOne(Service, 'services.json', 'id', req.params.id);
+    if (deleted) {
+      const allServices = await dbHelper.find(Service, 'services.json');
       res.json(allServices);
     } else {
       res.status(404).json({ message: 'Service not found' });

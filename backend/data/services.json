@@ -1,0 +1,50 @@
+[
+  {
+    "id": "turnkey-electrification",
+    "slug": "turnkey-electrification",
+    "title": "Turnkey Plant & Factory Electrification",
+    "description": "End-to-end electrical wiring, switchgear setup, and panel installation for new industrial manufacturing plants.",
+    "features": [
+      "High-voltage wiring and distribution networks",
+      "Assistance in government inspections and safety clearances",
+      "Transformer and heavy generator grid synchronization",
+      "Pre-commissioning quality testing and checks"
+    ]
+  },
+  {
+    "id": "custom-panel-design",
+    "slug": "custom-panel-design",
+    "title": "Custom Control Panel Design",
+    "description": "Bespoke fabrication of Motor Control Centers (MCC), PLC cabinets, and distribution switchboards according to custom load specifications.",
+    "features": [
+      "Pre-production computerized CAD 3D designing",
+      "CNC sheet metal cutting and precise cabinet punching",
+      "Installation of high-grade copper busbars and safety breakers",
+      "Pre-delivery factory inspection and heat-run testing"
+    ]
+  },
+  {
+    "id": "safety-audits",
+    "slug": "safety-audits",
+    "title": "Advanced Chemical Earthing",
+    "description": "Installation of copper-bonded chemical electrodes designed to dissipate lightning surges and short-circuit faults instantly.",
+    "features": [
+      "High-conductivity eco-friendly chemical backfill compounds",
+      "Post-installation ground impedance measurements",
+      "Corrosion-resistant steel core with a lifespan of 15+ years",
+      "Compact footprint compared to traditional charcoal grids"
+    ]
+  },
+  {
+    "id": "preventive-maintenance",
+    "slug": "preventive-maintenance",
+    "title": "Preventive Maintenance & Safety Audits",
+    "description": "Scheduled system checks, diagnostic tests, thermal imaging, and AMC services to prevent plant shutdowns and utility penalties.",
+    "features": [
+      "Monthly checkups of switch contacts and loose wire checks",
+      "Lubrication and calibration of main circuit breakers",
+      "Immediate troubleshooting and swap support for faulty parts",
+      "Emergency support team available for technical consultations"
+    ]
+  }
+]

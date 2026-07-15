@@ -2,13 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Inquiry = require('../models/Inquiry');
 const { protect } = require('../middleware/auth');
+const dbHelper = require('../config/dbHelper');
 
 // @desc    Get all inquiries
 // @route   GET /api/inquiries
 // @access  Private
 router.get('/', protect, async (req, res) => {
   try {
-    const inquiries = await Inquiry.find({}).sort({ date: -1 });
+    const inquiries = await dbHelper.find(Inquiry, 'inquiries.json', {}, { date: -1 });
     res.json(inquiries);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -22,8 +23,9 @@ router.post('/', async (req, res) => {
   const { name, company, email, phone, service, message } = req.body;
 
   try {
-    const newInquiry = new Inquiry({
-      id: `inq-${Date.now()}`,
+    const inqId = `inq-${Date.now()}`;
+    const newInquiry = {
+      id: inqId,
       name,
       company,
       email,
@@ -32,9 +34,9 @@ router.post('/', async (req, res) => {
       message,
       status: 'Pending',
       date: new Date()
-    });
+    };
 
-    await newInquiry.save();
+    await dbHelper.save(Inquiry, 'inquiries.json', 'id', inqId, newInquiry);
     res.status(201).json(newInquiry);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -48,13 +50,14 @@ router.put('/:id', protect, async (req, res) => {
   const { status } = req.body;
 
   try {
-    const inquiry = await Inquiry.findOne({ id: req.params.id });
+    const inquiry = await dbHelper.findOne(Inquiry, 'inquiries.json', { id: req.params.id });
 
     if (inquiry) {
-      inquiry.status = status || inquiry.status;
-      await inquiry.save();
+      await dbHelper.save(Inquiry, 'inquiries.json', 'id', req.params.id, {
+        status: status || inquiry.status
+      });
       
-      const allInquiries = await Inquiry.find({}).sort({ date: -1 });
+      const allInquiries = await dbHelper.find(Inquiry, 'inquiries.json', {}, { date: -1 });
       res.json(allInquiries);
     } else {
       res.status(404).json({ message: 'Inquiry not found' });
@@ -69,11 +72,9 @@ router.put('/:id', protect, async (req, res) => {
 // @access  Private
 router.delete('/:id', protect, async (req, res) => {
   try {
-    const inquiry = await Inquiry.findOne({ id: req.params.id });
-
-    if (inquiry) {
-      await Inquiry.deleteOne({ id: req.params.id });
-      const allInquiries = await Inquiry.find({}).sort({ date: -1 });
+    const deleted = await dbHelper.deleteOne(Inquiry, 'inquiries.json', 'id', req.params.id);
+    if (deleted) {
+      const allInquiries = await dbHelper.find(Inquiry, 'inquiries.json', {}, { date: -1 });
       res.json(allInquiries);
     } else {
       res.status(404).json({ message: 'Inquiry not found' });

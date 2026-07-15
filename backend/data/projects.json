@@ -1,0 +1,41 @@
+[
+  {
+    "id": "high-voltage-substation",
+    "slug": "high-voltage-substation",
+    "title": "Turnkey 132kV Substation Deployment",
+    "clientName": "Gujarat Heavy Chemicals Ltd",
+    "location": "Gujarat, India",
+    "scope": "Design, engineering, and commissioning of a turnkey 132kV industrial substation, including transformers, HT panels, and lightning systems.",
+    "completionYear": "2025",
+    "challenges": "The site was located in a coastal region with high risk of salt-water corrosion and high groundwater levels.",
+    "solutions": "Used hot-dip galvanized steel structures and weatherproof IP65 cabinets. Applied water-tight seals at all cable entries.",
+    "results": "Substation was successfully charged 30 days ahead of schedule, enabling the factory to start operations without delay.",
+    "image": "project_substation.png"
+  },
+  {
+    "id": "automated-manufacturing-grid",
+    "slug": "automated-manufacturing-grid",
+    "title": "Automotive Factory Power Synchronization",
+    "clientName": "Mahindra Auto Corp",
+    "location": "Maharashtra, India",
+    "scope": "Installation of Motor Control Centers (MCC), dual-input switchboards, automatic PLC systems, and copper busbar routing.",
+    "completionYear": "2024",
+    "challenges": "Assembly lines could not tolerate power cuts. Modifications had to be finished within a short 48-hour weekend shutdown.",
+    "solutions": "Pre-fabricated all panels and performed extensive testing offsite. Onsite assembly was plug-and-play.",
+    "results": "Successfully completed the grid update within 48 hours. The system achieved a 99.8% energy-efficiency rating.",
+    "image": "project_panelboard.png"
+  },
+  {
+    "id": "hospital-redundancy-system",
+    "slug": "hospital-redundancy-system",
+    "title": "Hospital Emergency Power Setup",
+    "clientName": "Max Healthcare Specialty Tower",
+    "location": "Jaipur, Rajasthan",
+    "scope": "Commissioning of automatic generator changeover panels (AMF), isolated medical panels, and chemical earthing systems.",
+    "completionYear": "2024",
+    "challenges": "Life support and MRI machines require continuous power. Generator backup had to start within 8 seconds of mains failure.",
+    "solutions": "Configured automatic changeover breakers controlled by high-speed PLC logic and installed chemical earthing.",
+    "results": "Tested backup switchover takes only 5.4 seconds, keeping critical life-support equipment completely safe.",
+    "image": "project_hospital.png"
+  }
+]

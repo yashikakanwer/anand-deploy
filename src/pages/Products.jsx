@@ -47,7 +47,7 @@ export default function Products() {
                         Key Specification:
                       </h4>
                       <span className="text-xs text-slate-800 bg-slate-100 border border-slate-200 px-2.5 py-1 rounded inline-block">
-                        {prod.specs[0].value || prod.specs[0]}
+                        {(prod.specs && prod.specs[0]) ? (prod.specs[0].value || prod.specs[0]) : 'Standard Specification'}
                       </span>
                     </div>
                   </div>

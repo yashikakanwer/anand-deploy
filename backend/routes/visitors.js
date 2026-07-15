@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Visitor = require('../models/Visitor');
 const { protect } = require('../middleware/auth');
+const dbHelper = require('../config/dbHelper');
 
 // @desc    Log a new page visit
 // @route   POST /api/visitors
@@ -18,14 +19,16 @@ router.post('/', async (req, res) => {
   }
 
   try {
-    const newVisit = new Visitor({
+    const visitId = `visit-${Date.now()}`;
+    const newVisit = {
+      id: visitId,
       ip: rawIp,
       page: page || '/',
       device: device || 'Desktop',
       date: new Date()
-    });
+    };
 
-    await newVisit.save();
+    await dbHelper.save(Visitor, 'visitors.json', 'id', visitId, newVisit);
     res.status(201).json(newVisit);
   } catch (error) {
     res.status(500).json({ message: error.message });
@@ -37,7 +40,7 @@ router.post('/', async (req, res) => {
 // @access  Private
 router.get('/', protect, async (req, res) => {
   try {
-    const logs = await Visitor.find({}).sort({ date: -1 });
+    const logs = await dbHelper.find(Visitor, 'visitors.json', {}, { date: -1 });
     res.json(logs);
   } catch (error) {
     res.status(500).json({ message: error.message });

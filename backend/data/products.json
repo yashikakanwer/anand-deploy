@@ -1,0 +1,212 @@
+[
+  {
+    "id": "dg-set-panel",
+    "slug": "dg-set-panel",
+    "name": "DG Set Control Panel",
+    "shortDescription": "User-friendly control system to operate and monitor backup generators.",
+    "description": "This panel is used for starting and stopping generators. It features a digital screen showing engine speed, battery level, oil pressure, and voltage, protecting the generator from overload.",
+    "specs": [
+      {
+        "name": "Screen System",
+        "value": "Automatic Controller (Microprocessor Based)"
+      },
+      {
+        "name": "Power Capacity",
+        "value": "Designed for Heavy Industrial & Commercial Generators"
+      },
+      {
+        "name": "Metal Box",
+        "value": "Weatherproof & Dustproof Steel Enclosure"
+      }
+    ],
+    "features": [
+      "Automatic start-stop functionality on power failure",
+      "Pre-failure warnings for low oil pressure or high temperature",
+      "Emergency stop switch for immediate shutdown",
+      "Clean, isolated wiring layout for easy maintenance"
+    ],
+    "applications": [
+      "Large factories and industrial mills",
+      "Hospitals and educational institutions",
+      "Shopping malls and commercial hotels",
+      "Residential apartments and societies"
+    ],
+    "catalogName": "dg-set-panel-catalog.pdf",
+    "image": "https://www.anandelectricals.in/product/AMF-Control-Panel.jpg"
+  },
+  {
+    "id": "electric-control-panel",
+    "slug": "electric-control-panel",
+    "name": "Electric Control Panel",
+    "shortDescription": "Safe, reliable power distribution board for factories and buildings.",
+    "description": "A standard distribution board used to route power and control machines safely. Designed with high-grade safety isolation features, eliminating shock hazards.",
+    "specs": [
+      {
+        "name": "Copper Quality",
+        "value": "99.9% Pure Copper wires and busbars"
+      },
+      {
+        "name": "Current Range",
+        "value": "Suitable for small workshops to large factories"
+      },
+      {
+        "name": "Enclosure",
+        "value": "Robust CRCA sheet metal steel casing"
+      }
+    ],
+    "features": [
+      "Fully customizable size and configuration",
+      "Shock-proof and fire-retardant design",
+      "Premium powder coating for rust and corrosion prevention",
+      "Optimal ventilation slots to prevent overheating"
+    ],
+    "applications": [
+      "Textile, plastic, and manufacturing factories",
+      "Showrooms, retail shops, and commercial offices",
+      "Cold storage and food processing facilities",
+      "Schools, colleges, and training institutes"
+    ],
+    "catalogName": "electric-panel-catalog.pdf",
+    "image": "https://www.anandelectricals.in/product/Industrial-Electrical-Control-Panel.jpg"
+  },
+  {
+    "id": "ht-lt-panel",
+    "slug": "ht-lt-panel",
+    "name": "HT LT Panel",
+    "shortDescription": "High-capacity switchgear panel to safely distribute high-voltage utility power.",
+    "description": "Designed to distribute high-voltage electricity safely to various machinery groups in a plant. Includes automatic protection relays that cut off power during faults.",
+    "specs": [
+      {
+        "name": "Voltage Range",
+        "value": "11kV High-tension input down to 415V Low-tension distribution"
+      },
+      {
+        "name": "Main Switch",
+        "value": "Automatic Air / Vacuum Circuit Breaker"
+      },
+      {
+        "name": "Safety Rating",
+        "value": "Short-circuit tested up to 50kA"
+      }
+    ],
+    "features": [
+      "Specialized switchgear to handle high-voltage loads",
+      "Automatic trip action on short circuit or overload",
+      "Safety interlocks to prevent accidental contact",
+      "Double door steel enclosure with safety lock"
+    ],
+    "applications": [
+      "Substations and grid infrastructure",
+      "Steel rolling mills and cement plants",
+      "Heavy engineering factories",
+      "Solar power projects"
+    ],
+    "catalogName": "ht-lt-panel-catalog.pdf",
+    "image": "https://www.anandelectricals.in/product/electrical-ht-lt-distribution-panel.jpg"
+  },
+  {
+    "id": "apfc-panel",
+    "slug": "apfc-panel",
+    "name": "APFC Panel",
+    "shortDescription": "Automatic Power Factor Correction panel to reduce energy bills and penalties.",
+    "description": "This panel monitors inductive loads in real-time and switches capacitor banks to improve power factor, reducing electricity bills and avoiding reactive energy penalties.",
+    "specs": [
+      {
+        "name": "Controller",
+        "value": "Microprocessor-based automatic power saver controller"
+      },
+      {
+        "name": "Savings Capacitors",
+        "value": "Heavy duty self-healing power capacitors"
+      },
+      {
+        "name": "Heat Release",
+        "value": "Integrated cooling fans to maintain optimum temperature"
+      }
+    ],
+    "features": [
+      "Maintains power factor at 0.99 for maximum efficiency",
+      "Protects industrial machinery from voltage spikes",
+      "Automatic operation, switching capacitors as load changes",
+      "Saves money by avoiding utility reactive energy penalties"
+    ],
+    "applications": [
+      "Plastic injection molding facilities",
+      "Automotive workshops and garage setups",
+      "Flour mills, oil mills, and heavy industries",
+      "Large offices, commercial complexes, and buildings"
+    ],
+    "catalogName": "apfc-catalog.pdf",
+    "image": "https://www.anandelectricals.in/product/Three-Phase-Apfc-Panel.jpg"
+  },
+  {
+    "id": "pcc-panel",
+    "slug": "pcc-panel",
+    "name": "PCC Panel",
+    "shortDescription": "Power Control Center panel for centralized power distribution.",
+    "description": "Serves as the main distribution board for the entire plant. Enables safe and centralized monitoring and control of the complete facility's power supply.",
+    "specs": [
+      {
+        "name": "Current Capacity",
+        "value": "800A to 6300A for large-scale operations"
+      },
+      {
+        "name": "Safety Breaker",
+        "value": "Air Circuit Breakers (ACB) and Moulded Case Circuit Breakers (MCCB)"
+      },
+      {
+        "name": "Enclosure Safety",
+        "value": "IP54/IP55 rated dust and water resistant casing"
+      }
+    ],
+    "features": [
+      "High-conductivity copper busbars to handle large currents",
+      "Robust heat dissipation design for continuous duty",
+      "Digital metering showing active line currents and voltages",
+      "Isolated cubicle structure for enhanced safety"
+    ],
+    "applications": [
+      "Infrastructure projects and large industries",
+      "Steel plants and iron foundries",
+      "Hospitals and large business parks",
+      "Mining and stone crushing operations"
+    ],
+    "catalogName": "pcc-catalog.pdf",
+    "image": "https://www.anandelectricals.in/product/Power-Control-Center.jpg"
+  },
+  {
+    "id": "fire-hydrant-panel",
+    "slug": "fire-hydrant-panel",
+    "name": "Fire Hydrant Panel",
+    "shortDescription": "Emergency control panel to run firefighting water pumps automatically.",
+    "description": "Automatically triggers firefighting water pumps when a drop in water line pressure is detected, ensuring immediate water supply in case of fire emergencies.",
+    "specs": [
+      {
+        "name": "Start Type",
+        "value": "Automatic Star-Delta or Soft Starter to prevent power surges"
+      },
+      {
+        "name": "Sensors Connection",
+        "value": "Water pressure sensor based automatic start"
+      },
+      {
+        "name": "Alarm Support",
+        "value": "Integrated hooter / siren for audible alert during fire activation"
+      }
+    ],
+    "features": [
+      "Launches pump automatically when pipeline pressure drops",
+      "Triggers alarm to alert occupants immediately",
+      "Auxiliary battery support for control unit",
+      "Weatherproof IP65 enclosure protection"
+    ],
+    "applications": [
+      "Residential apartments and housing complexes",
+      "Manufacturing plants and chemical units",
+      "Warehouses and logistics depots",
+      "Hotels, commercial malls, and high-rise buildings"
+    ],
+    "catalogName": "fire-hydrant-catalog.pdf",
+    "image": "https://www.anandelectricals.in/product/AMF-Control-Panel.jpg"
+  }
+]

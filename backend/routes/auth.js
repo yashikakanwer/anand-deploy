@@ -11,11 +11,34 @@ const generateToken = (id) => {
   });
 };
 
+const { getFallbackData, isMongoConnected } = require('../config/fallbackDB');
+const bcrypt = require('bcryptjs');
+
 // @desc    Auth user & get token
 // @route   POST /api/auth/login
 // @access  Public
 router.post('/login', async (req, res) => {
   const { username, password } = req.body;
+
+  if (!isMongoConnected()) {
+    try {
+      const users = getFallbackData('users.json');
+      const user = users.find(u => u.username === username);
+      if (user && bcrypt.compareSync(password, user.password)) {
+        return res.json({
+          id: user.username,
+          name: user.name,
+          username: user.username,
+          role: user.role,
+          token: generateToken(user.username)
+        });
+      } else {
+        return res.status(401).json({ message: 'Invalid username or password' });
+      }
+    } catch (error) {
+      return res.status(500).json({ message: error.message });
+    }
+  }
 
   try {
     const user = await User.findOne({ username });
