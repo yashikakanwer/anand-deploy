@@ -95,11 +95,9 @@ function LoginScreen({ onLoginSuccess }) {
     try {
       const user = await db.login(username, password);
       if (user) {
-        try {
-          await db.loadAdminData();
-        } catch (loadErr) {
+        db.loadAdminData().catch((loadErr) => {
           console.warn('Failed to load admin data during login:', loadErr);
-        }
+        });
         onLoginSuccess(user);
       } else {
         setError('Invalid username or password.');
