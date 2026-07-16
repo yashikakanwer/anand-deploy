@@ -11,7 +11,7 @@ ctx.verify_mode = ssl.CERT_NONE
 
 try:
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-    with urllib.request.urlopen(req, context=ctx, timeout=5) as response:
+    with urllib.request.urlopen(req, context=ctx, timeout=30) as response:
         print("Status code:", response.status)
         data = response.read().decode('utf-8')
         print("Data response:", data)

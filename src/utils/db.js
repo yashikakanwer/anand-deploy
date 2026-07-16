@@ -9,7 +9,7 @@ const API_URL = import.meta.env.DEV ? 'http://localhost:5000/api' : 'https://ana
 // Create Axios Instance with timeout
 const api = axios.create({
   baseURL: API_URL,
-  timeout: 5000,
+  timeout: 30000,
 });
 
 // Automatically set Auth Header if token exists
