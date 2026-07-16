@@ -3,8 +3,10 @@ import { Link, useLocation } from 'react-router-dom';
 import { FaBars, FaTimes, FaChevronDown, FaEnvelope, FaPhoneAlt, FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { db } from '../../utils/db';
 import logoImg from '../../assets/logo.png';
+import { useLanguage } from '../../utils/LanguageContext';
 
 export default function Navbar() {
+  const { language, setLanguage, t } = useLanguage();
   const productsData = db.getProducts();
   const servicesData = db.getServices();
   const [scrolled, setScrolled] = useState(false);
@@ -73,8 +75,15 @@ export default function Navbar() {
 
         {/* Right segment with social media links */}
         <div className="flex items-center gap-4 pr-6 md:pr-12 h-full z-10">
-          <Link to="/admin" className="text-slate-400 hover:text-white transition-colors border-r border-slate-800 pr-4 mr-1">Admin Login</Link>
-          <span className="text-slate-400 font-medium">Follow Us:</span>
+          <select 
+            value={language} 
+            onChange={(e) => setLanguage(e.target.value)}
+            className="bg-[#0a0f18] border border-slate-800 text-slate-350 text-[11px] px-2 py-0.5 rounded cursor-pointer hover:border-industrial-cyan transition-colors focus:outline-none font-semibold mr-2"
+          >
+            <option value="en">English</option>
+            <option value="hinglish">Hinglish</option>
+          </select>
+          <span className="text-slate-400 font-medium">{t('followUs')}</span>
           <div className="flex items-center gap-3.5">
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-industrial-cyan transition-colors" aria-label="Facebook">
               <FaFacebookF />
@@ -106,17 +115,17 @@ export default function Navbar() {
           <ul className="flex items-center gap-5 font-body text-xs font-semibold uppercase tracking-wider">
             <li>
               <Link to="/" className={`hover:text-industrial-cyan transition-colors ${isActive('/')}`}>
-                Home
+                {t('home')}
               </Link>
             </li>
             <li>
               <Link to="/about" className={`hover:text-industrial-cyan transition-colors ${isActive('/about')}`}>
-                About
+                {t('about')}
               </Link>
             </li>
             <li>
               <Link to="/leadership" className={`hover:text-industrial-cyan transition-colors ${isActive('/leadership')}`}>
-                Leadership
+                {t('leadership')}
               </Link>
             </li>
             
@@ -126,7 +135,7 @@ export default function Navbar() {
                 className={`flex items-center gap-1 hover:text-industrial-cyan transition-colors outline-none ${isActive('/products')}`}
                 onClick={() => toggleDropdown('products')}
               >
-                Products <FaChevronDown className="text-[10px] group-hover:rotate-180 transition-transform duration-300" />
+                {t('products')} <FaChevronDown className="text-[10px] group-hover:rotate-180 transition-transform duration-300" />
               </button>
               <div className="absolute top-full left-0 mt-3 w-64 bg-white border border-slate-100 rounded-lg p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl backdrop-blur-lg">
                 <div className="grid grid-cols-1 gap-1">
@@ -141,7 +150,7 @@ export default function Navbar() {
                   ))}
                   <div className="border-t border-slate-100 my-1"></div>
                   <Link to="/products" className="px-4 py-2 text-xs text-industrial-cyan hover:text-industrial-cyan/80 transition-colors font-semibold">
-                    View All Products
+                    {t('viewAllProducts')}
                   </Link>
                 </div>
               </div>
@@ -153,7 +162,7 @@ export default function Navbar() {
                 className={`flex items-center gap-1 hover:text-industrial-cyan transition-colors outline-none ${isActive('/services')}`}
                 onClick={() => toggleDropdown('services')}
               >
-                Services <FaChevronDown className="text-[10px] group-hover:rotate-180 transition-transform duration-300" />
+                {t('services')} <FaChevronDown className="text-[10px] group-hover:rotate-180 transition-transform duration-300" />
               </button>
               <div className="absolute top-full left-0 mt-3 w-64 bg-white border border-slate-100 rounded-lg p-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl backdrop-blur-lg">
                 <div className="grid grid-cols-1 gap-1">
@@ -168,7 +177,7 @@ export default function Navbar() {
                   ))}
                   <div className="border-t border-slate-100 my-1"></div>
                   <Link to="/services" className="px-4 py-2 text-xs text-industrial-cyan hover:text-industrial-cyan/80 transition-colors font-semibold">
-                    Explore Services
+                    {t('exploreServices')}
                   </Link>
                 </div>
               </div>
@@ -176,12 +185,12 @@ export default function Navbar() {
 
             <li>
               <Link to="/projects" className={`hover:text-industrial-cyan transition-colors ${isActive('/projects')}`}>
-                Projects
+                {t('projects')}
               </Link>
             </li>
             <li>
               <Link to="/industries" className={`hover:text-industrial-cyan transition-colors ${isActive('/industries')}`}>
-                Industries
+                {t('industries')}
               </Link>
             </li>
 
@@ -191,7 +200,7 @@ export default function Navbar() {
         {/* Action Button & Toggle */}
         <div className="flex items-center gap-4">
           <Link to="/quote" className="hidden sm:inline-flex px-5 py-2.5 bg-industrial-cyan text-white hover:bg-slate-900 transition-all font-semibold rounded-md text-xs tracking-wider uppercase font-heading shadow-md shadow-industrial-cyan/10">
-            Get Quote
+            {t('getQuote')}
           </Link>
           
           <button 
@@ -212,17 +221,17 @@ export default function Navbar() {
           <ul className="flex flex-col gap-6 font-body text-base font-semibold">
             <li>
               <Link to="/" className={location.pathname === '/' ? 'text-industrial-cyan' : 'text-slate-700'}>
-                Home
+                {t('home')}
               </Link>
             </li>
             <li>
               <Link to="/about" className={location.pathname.startsWith('/about') ? 'text-industrial-cyan' : 'text-industrial-muted'}>
-                About Us
+                {t('about')}
               </Link>
             </li>
             <li>
               <Link to="/leadership" className={location.pathname.startsWith('/leadership') ? 'text-industrial-cyan' : 'text-industrial-muted'}>
-                Leadership
+                {t('leadership')}
               </Link>
             </li>
             
@@ -232,7 +241,7 @@ export default function Navbar() {
                 onClick={() => toggleDropdown('products')}
                 className="flex items-center justify-between w-full text-industrial-muted"
               >
-                Products <FaChevronDown className={`text-xs transition-transform ${dropdownOpen === 'products' ? 'rotate-180' : ''}`} />
+                {t('products')} <FaChevronDown className={`text-xs transition-transform ${dropdownOpen === 'products' ? 'rotate-180' : ''}`} />
               </button>
               {dropdownOpen === 'products' && (
                 <ul className="pl-4 mt-3 flex flex-col gap-3 border-l border-slate-100">
@@ -245,7 +254,7 @@ export default function Navbar() {
                   ))}
                   <li>
                     <Link to="/products" className="text-sm text-industrial-cyan">
-                      All Products
+                      {t('allProducts')}
                     </Link>
                   </li>
                 </ul>
@@ -258,7 +267,7 @@ export default function Navbar() {
                 onClick={() => toggleDropdown('services')}
                 className="flex items-center justify-between w-full text-industrial-muted"
               >
-                Services <FaChevronDown className={`text-xs transition-transform ${dropdownOpen === 'services' ? 'rotate-180' : ''}`} />
+                {t('services')} <FaChevronDown className={`text-xs transition-transform ${dropdownOpen === 'services' ? 'rotate-180' : ''}`} />
               </button>
               {dropdownOpen === 'services' && (
                 <ul className="pl-4 mt-3 flex flex-col gap-3 border-l border-slate-100">
@@ -274,7 +283,7 @@ export default function Navbar() {
                   ))}
                   <li>
                     <Link to="/services" className="text-sm text-industrial-cyan">
-                      All Services
+                      {t('allServices')}
                     </Link>
                   </li>
                 </ul>
@@ -283,18 +292,31 @@ export default function Navbar() {
 
             <li>
               <Link to="/projects" className={location.pathname.startsWith('/projects') ? 'text-industrial-cyan' : 'text-industrial-muted'}>
-                Projects
+                {t('projects')}
               </Link>
             </li>
             <li>
               <Link to="/industries" className={location.pathname.startsWith('/industries') ? 'text-industrial-cyan' : 'text-industrial-muted'}>
-                Industries
+                {t('industries')}
               </Link>
+            </li>
+
+            {/* Language Selection for Mobile */}
+            <li className="pt-4 border-t border-slate-100 flex flex-col gap-2">
+              <span className="text-xs text-slate-500 font-semibold uppercase">Language</span>
+              <select 
+                value={language} 
+                onChange={(e) => setLanguage(e.target.value)}
+                className="w-full bg-slate-50 border border-slate-200 text-slate-800 text-sm px-3 py-2 rounded font-medium focus:outline-none focus:border-industrial-cyan"
+              >
+                <option value="en">English</option>
+                <option value="hinglish">Hinglish</option>
+              </select>
             </li>
 
             <li className="pt-4 border-t border-slate-100">
               <Link to="/quote" className="flex justify-center py-3 bg-industrial-cyan text-white font-semibold rounded-md uppercase text-center text-sm font-heading shadow-md shadow-industrial-cyan/10">
-                Get Free Consultation
+                {t('getFreeConsultation')}
               </Link>
             </li>
           </ul>

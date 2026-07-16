@@ -2,12 +2,14 @@ import React from 'react';
 import PageBanner from '../components/sections/PageBanner';
 import ContactForm from '../components/sections/ContactForm';
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
+import { useLanguage } from '../utils/LanguageContext';
 
 export default function Contact() {
+  const { t } = useLanguage();
   return (
     <div className="bg-white text-slate-900 overflow-hidden">
       <PageBanner 
-        title="Contact Us" 
+        title={t('contactUs')} 
         subtitle="Consult with our engineering team for industrial switchgear bids and custom panel fabrication requests."
       />
 
@@ -73,7 +75,7 @@ export default function Contact() {
           {/* Form Column */}
           <div className="lg:col-span-7">
             <h2 className="font-heading font-bold text-2.5xl text-slate-900 mb-6">
-              Request an Inquiry
+              {t('contactTitle')}
             </h2>
             <ContactForm />
           </div>

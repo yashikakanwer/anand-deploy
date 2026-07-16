@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../../utils/LanguageContext';
 
 function CounterItem({ target, suffix, label }) {
   const [count, setCount] = useState(0);
@@ -70,11 +71,12 @@ function CounterItem({ target, suffix, label }) {
 }
 
 export default function StatsCounter({ cols = "grid-cols-2 md:grid-cols-4" }) {
+  const { t } = useLanguage();
   const stats = [
-    { target: "18", suffix: "+", label: "Years of Service" },
-    { target: "515", suffix: "+", label: "Completed Projects" },
-    { target: "400", suffix: "+", label: "Happy Clients" },
-    { target: "25", suffix: "+", label: "Staff Members" }
+    { target: "18", suffix: "+", label: t("yearsOfService") },
+    { target: "515", suffix: "+", label: t("completedProjects") },
+    { target: "400", suffix: "+", label: t("happyClients") },
+    { target: "25", suffix: "+", label: t("staffMembers") }
   ];
 
   return (

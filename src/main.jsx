@@ -4,11 +4,15 @@ import './index.css';
 import App from './App.jsx';
 import { db } from './utils/db';
 
+import { LanguageProvider } from './utils/LanguageContext.jsx';
+
 // Mount React immediately
 const root = createRoot(document.getElementById('root'));
 root.render(
   <StrictMode>
-    <App />
+    <LanguageProvider>
+      <App />
+    </LanguageProvider>
   </StrictMode>
 );
 

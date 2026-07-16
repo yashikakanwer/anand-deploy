@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { db } from '../../utils/db';
+import { useLanguage } from '../../utils/LanguageContext';
 
 export default function ContactForm({ presetService = "" }) {
+  const { t } = useLanguage();
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const queryProduct = searchParams.get('product') || searchParams.get('service') || '';
@@ -73,7 +75,7 @@ export default function ContactForm({ presetService = "" }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="flex flex-col gap-2">
             <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-              Full Name
+              {t('fullName')}
             </label>
             <input 
               type="text" 
@@ -104,7 +106,7 @@ export default function ContactForm({ presetService = "" }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="flex flex-col gap-2">
             <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-              Email Address
+              {t('emailAddress')}
             </label>
             <input 
               type="email" 
@@ -118,7 +120,7 @@ export default function ContactForm({ presetService = "" }) {
           </div>
           <div className="flex flex-col gap-2">
             <label htmlFor="phone" className="text-xs font-semibold uppercase tracking-wider text-slate-500">
-              Phone Number
+              {t('phone')}
             </label>
             <input 
               type="tel" 
@@ -183,7 +185,7 @@ export default function ContactForm({ presetService = "" }) {
           disabled={submitting}
           className="w-full py-4 bg-industrial-cyan text-white hover:bg-slate-900 font-bold rounded-md text-sm transition-all duration-300 tracking-wider uppercase font-heading disabled:opacity-50 shadow-md shadow-industrial-cyan/10"
         >
-          {submitting ? 'Submitting...' : 'Request Quote'}
+          {submitting ? t('sendingButton') : t('getQuote')}
         </button>
 
         {success && (

@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { FaLinkedin, FaTwitter, FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 import { db } from '../../utils/db';
 import logoImg from '../../assets/logo.png';
+import { useLanguage } from '../../utils/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
   const productsData = db.getProducts();
   return (
     <footer id="footer" className="bg-[#0a0f18] border-t border-slate-900 pt-20 pb-8 text-sm">
@@ -123,11 +125,10 @@ export default function Footer() {
 
       {/* Footer Bottom bar */}
       <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-slate-900 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
-        <p>&copy; {new Date().getFullYear()} Anand Electricals & Engineers Pvt Ltd. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} {t('rightsReserved')}</p>
         <div className="flex gap-6">
-          <a href="#" className="hover:text-industrial-cyan transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-industrial-cyan transition-colors">Terms of Service</a>
-          <Link to="/admin" className="text-slate-405 hover:text-industrial-cyan font-semibold transition-colors">Admin Portal</Link>
+          <a href="#" className="hover:text-industrial-cyan transition-colors">{t('privacyPolicy')}</a>
+          <a href="#" className="hover:text-industrial-cyan transition-colors">{t('termsOfService')}</a>
         </div>
       </div>
     </footer>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaCertificate, FaArrowRight, FaShieldAlt, FaIndustry, FaHandshake } from 'react-icons/fa';
+import { useLanguage } from '../utils/LanguageContext';
 
 // Import Shared Components
 import StatsCounter from '../components/sections/StatsCounter';
@@ -16,6 +17,7 @@ import panelboardImg from '../assets/project_panelboard.png';
 import heroBgImg from '../assets/hero_industrial_bg.png';
 
 export default function Home() {
+  const { t } = useLanguage();
   const productsData = db.getProducts();
   const projectsData = db.getProjects();
   const servicesData = db.getServices();
@@ -49,20 +51,20 @@ export default function Home() {
           <div className="lg:col-span-7 flex flex-col items-start text-left">
             <span className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 border border-white/20 rounded-full text-xs font-semibold text-industrial-cyan uppercase tracking-widest mb-6">
               <span className="w-1.5 h-1.5 bg-industrial-cyan rounded-full animate-ping"></span>
-              Safe & Reliable Electrical Solutions
+              {t('heroTagline')}
             </span>
             <h1 className="font-heading font-extrabold text-4xl md:text-5.5xl leading-tight tracking-tight text-white mb-6">
-              High-Quality Switchgear & Custom Control Panels.
+              {t('heroTitle')}
             </h1>
             <p className="font-body text-base md:text-lg text-slate-300 max-w-xl mb-8 leading-relaxed">
-              Durable, safe, and efficient electrical panels engineered to minimize line losses and prevent power interruptions.
+              {t('heroDescription')}
             </p>
             <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
               <Link to="/products" className="w-full sm:w-auto px-8 py-3.5 bg-industrial-cyan text-white hover:bg-white hover:text-slate-900 transition-all font-semibold rounded-md text-sm text-center tracking-wider uppercase font-heading shadow-lg shadow-industrial-cyan/15">
-                Our Products
+                {t('products')}
               </Link>
               <Link to="/quote" className="w-full sm:w-auto px-8 py-3.5 bg-transparent border border-white/30 hover:border-white text-white transition-all font-semibold rounded-md text-sm text-center tracking-wider uppercase font-heading">
-                Request a Quote
+                {t('requestQuote')}
               </Link>
             </div>
           </div>
@@ -90,37 +92,37 @@ export default function Home() {
             className="space-y-6"
           >
             <span className="font-heading font-semibold text-xs tracking-widest text-industrial-cyan uppercase">
-              About Us
+              {t('about')}
             </span>
             <h2 className="font-heading font-bold text-3xl md:text-4.5xl text-slate-900 tracking-tight">
-              Trusted Electrical Solutions for Industrial Factories & Buildings
+              {t('aboutUsTitle')}
             </h2>
             <p className="text-slate-600 leading-relaxed text-sm md:text-base">
-              Anand Electricals & Engineers is a highly reliable electrical contracting firm. We specialize in designing and manufacturing high-durability distribution panels and safety enclosures that protect against short circuits.
+              {t('aboutUsDescription1')}
             </p>
             <p className="text-slate-600 leading-relaxed text-sm">
-              Our products are built with high-quality sheet metal, using automated manufacturing machines for precision and safety. All installations are completely shock-proof and built to last.
+              {t('aboutUsDescription2')}
             </p>
             <Link to="/about" className="inline-flex items-center gap-2 text-industrial-cyan hover:text-slate-900 transition-colors font-semibold font-heading text-sm">
-              Learn More About Us <FaArrowRight size={12} />
+              {t('learnMoreAboutUs')} <FaArrowRight size={12} />
             </Link>
           </motion.div>
 
           <div className="grid grid-cols-2 gap-6">
             <div className="p-6 bg-slate-50 border border-slate-200/60 rounded-xl hover:border-industrial-cyan/20 transition-all duration-300 shadow-sm hover:shadow-md">
               <FaShieldAlt className="text-industrial-cyan text-3xl mb-4" />
-              <h4 className="font-heading font-semibold text-slate-900 mb-2">Shockproof & Safe Design</h4>
-              <p className="text-slate-500 text-xs leading-relaxed">All products undergo strict insulation testing to eliminate short-circuit and leakage hazards.</p>
+              <h4 className="font-heading font-semibold text-slate-900 mb-2">{t('shockproofTitle')}</h4>
+              <p className="text-slate-500 text-xs leading-relaxed">{t('shockproofDesc')}</p>
             </div>
             <div className="p-6 bg-slate-50 border border-slate-200/60 rounded-xl hover:border-industrial-cyan/20 transition-all duration-300 shadow-sm hover:shadow-md">
               <FaIndustry className="text-industrial-cyan text-3xl mb-4" />
-              <h4 className="font-heading font-semibold text-slate-900 mb-2">Durable Metal Enclosures</h4>
-              <p className="text-slate-500 text-xs leading-relaxed">Heavy-duty CRCA steel cabinets designed to protect switches from dust, rust, and water ingress.</p>
+              <h4 className="font-heading font-semibold text-slate-900 mb-2">{t('durableTitle')}</h4>
+              <p className="text-slate-500 text-xs leading-relaxed">{t('durableDesc')}</p>
             </div>
             <div className="p-6 bg-slate-50 border border-slate-200/60 rounded-xl hover:border-industrial-cyan/20 transition-all duration-300 col-span-2 shadow-sm hover:shadow-md">
               <FaHandshake className="text-industrial-cyan text-3xl mb-4" />
-              <h4 className="font-heading font-semibold text-slate-900 mb-2">Government Approved (Grade-A)</h4>
-              <p className="text-slate-500 text-xs leading-relaxed">Licensed A-Grade electrical contractor trusted by regional utilities and private developers.</p>
+              <h4 className="font-heading font-semibold text-slate-900 mb-2">{t('govApprovedTitle')}</h4>
+              <p className="text-slate-500 text-xs leading-relaxed">{t('govApprovedDesc')}</p>
             </div>
           </div>
         </div>
@@ -132,14 +134,14 @@ export default function Home() {
           <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-6 mb-16">
             <div>
               <span className="font-heading font-semibold text-xs tracking-widest text-industrial-cyan uppercase mb-3 block">
-                Our Capabilities
+                {t('capabilitiesTagline')}
               </span>
               <h2 className="font-heading font-bold text-3xl md:text-4.5xl text-slate-900 tracking-tight">
-                Industrial Switchgear & Panel Systems
+                {t('capabilitiesTitle')}
               </h2>
             </div>
             <Link to="/products" className="text-industrial-cyan hover:text-slate-900 font-semibold text-sm inline-flex items-center gap-1.5 font-heading">
-              View All Products <FaArrowRight size={12} />
+              {t('viewAllProducts')} <FaArrowRight size={12} />
             </Link>
           </div>
 
