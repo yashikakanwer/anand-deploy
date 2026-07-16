@@ -1,0 +1,4 @@
+PORT=5000
+MONGODB_URI=mongodb+srv://anand2026:anand@cluster0.okfpdme.mongodb.net/anand_db?retryWrites=true&w=majority
+JWT_SECRET=anand_electricals_super_secure_key_1984
+NODE_ENV=production

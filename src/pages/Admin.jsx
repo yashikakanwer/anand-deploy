@@ -20,11 +20,10 @@ export default function Admin() {
     if (currentUser) {
       setUser(currentUser);
       db.loadAdminData()
-        .then(() => setLoading(false))
         .catch((err) => {
-          console.warn('Session expired or invalid. Redirecting to login.', err);
-          db.logout();
-          setUser(null);
+          console.warn('Failed to load admin data on init, but keeping session active:', err);
+        })
+        .finally(() => {
           setLoading(false);
         });
     } else {
@@ -96,7 +95,11 @@ function LoginScreen({ onLoginSuccess }) {
     try {
       const user = await db.login(username, password);
       if (user) {
-        await db.loadAdminData();
+        try {
+          await db.loadAdminData();
+        } catch (loadErr) {
+          console.warn('Failed to load admin data during login:', loadErr);
+        }
         onLoginSuccess(user);
       } else {
         setError('Invalid username or password.');
