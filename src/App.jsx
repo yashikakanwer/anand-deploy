@@ -26,7 +26,7 @@ import NotFound from './pages/NotFound';
 
 function AppContent() {
   const location = useLocation();
-  const isAdmin = location.pathname.startsWith('/admin');
+  const isAdmin = location.pathname.startsWith('/admin') || location.pathname.startsWith('/cpanel');
 
   // Track page visits
   useEffect(() => {
@@ -46,6 +46,7 @@ function AppContent() {
       <main className="h-screen w-full overflow-hidden bg-slate-50">
         <Routes>
           <Route path="/admin" element={<Admin />} />
+          <Route path="/cpanel" element={<Admin />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
